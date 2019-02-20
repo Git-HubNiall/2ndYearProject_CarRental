@@ -1,0 +1,3 @@
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/lab5CRUDCDU/conf/routes:20:1: value logout is not a member of controllers.LoginController[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /logout                     controllers.LoginController.logout[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

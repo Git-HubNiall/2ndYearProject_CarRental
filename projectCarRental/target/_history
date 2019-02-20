@@ -1,0 +1,24 @@
+sbt version
+exit
+ls
+run
+clean
+compile
+clean
+compile
+run
+clean
+compile
+run
+exit
+run
+h2-browser
+run
+h2-browser
+exit
+run
+exit
+run
+clean
+compile
+run
