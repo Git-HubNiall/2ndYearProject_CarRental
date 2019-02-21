@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object main extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[String,Html,play.twirl.api.HtmlFormat.Appendable] {
+object main extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[String,models.users.User,Html,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(pagename:String)(content:Html):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(pagename:String, user: models.users.User)(content:Html):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
@@ -56,7 +56,13 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
             <li """),_display_(/*25.18*/if(pagename == "Home")/*25.40*/ {_display_(Seq[Any](format.raw/*25.42*/("""class="active"""")))}),format.raw/*25.57*/("""><a href=""""),_display_(/*25.68*/routes/*25.74*/.HomeController.index()),format.raw/*25.97*/("""">Home</a></li>
 		    <li """),_display_(/*26.12*/if(pagename == "On Sale")/*26.37*/ {_display_(Seq[Any](format.raw/*26.39*/("""class="active"""")))}),format.raw/*26.54*/("""><a href=""""),_display_(/*26.65*/routes/*26.71*/.HomeController.onsale()),format.raw/*26.95*/("""">On Sale</a></li>
 			<li """),_display_(/*27.9*/if(pagename == "About")/*27.32*/ {_display_(Seq[Any](format.raw/*27.34*/("""class="active"""")))}),format.raw/*27.49*/("""><a href=""""),_display_(/*27.60*/routes/*27.66*/.HomeController.about()),format.raw/*27.89*/("""">About us</a></li>
-			<li """),_display_(/*28.9*/if(pagename == "Log In")/*28.33*/ {_display_(Seq[Any](format.raw/*28.35*/("""class="active"""")))}),format.raw/*28.50*/("""><a href=""""),_display_(/*28.61*/routes/*28.67*/.LoginController.login()),format.raw/*28.91*/("""">Log In</a></li>
+			<li """),_display_(/*28.9*/if(pagename == "Log In")/*28.33*/ {_display_(Seq[Any](format.raw/*28.35*/("""class="active"""")))}),format.raw/*28.50*/(""">
+				"""),_display_(/*29.6*/if(user != null)/*29.22*/{_display_(Seq[Any](format.raw/*29.23*/("""
+					"""),format.raw/*30.6*/("""<a href=""""),_display_(/*30.16*/routes/*30.22*/.LoginController.logout()),format.raw/*30.47*/("""">Log Out</a>	
+				""")))}/*31.7*/else/*31.12*/{_display_(Seq[Any](format.raw/*31.13*/("""
+					"""),format.raw/*32.6*/("""<a href=""""),_display_(/*32.16*/routes/*32.22*/.LoginController.login()),format.raw/*32.46*/("""">Log In</a>
+				""")))}),format.raw/*33.6*/("""
+			"""),format.raw/*34.4*/("""</li>
 		</ul>
 	    </div>
 	</nav>
@@ -72,8 +78,8 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 		</div>
 		<div class="col-sm-8">
 		    <div class="midcol">
-			"""),_display_(/*44.5*/content),format.raw/*44.12*/("""
-		    """),format.raw/*45.7*/("""</div>
+			"""),_display_(/*50.5*/content),format.raw/*50.12*/("""
+		    """),format.raw/*51.7*/("""</div>
 		</div>
 		<div class="col-sm-2">
 		    <div class="well sidecol">
@@ -91,7 +97,7 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 		</div>
 	    </div>
 	</div>
-	<script src =""""),_display_(/*63.17*/routes/*63.23*/.Assets.versioned("javascripts/main.js")),format.raw/*63.63*/(""""></script>
+	<script src =""""),_display_(/*69.17*/routes/*69.23*/.Assets.versioned("javascripts/main.js")),format.raw/*69.63*/(""""></script>
     </body>
 </html>
 
@@ -100,9 +106,9 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
     }
   }
 
-  def render(pagename:String,content:Html): play.twirl.api.HtmlFormat.Appendable = apply(pagename)(content)
+  def render(pagename:String,user:models.users.User,content:Html): play.twirl.api.HtmlFormat.Appendable = apply(pagename,user)(content)
 
-  def f:((String) => (Html) => play.twirl.api.HtmlFormat.Appendable) = (pagename) => (content) => apply(pagename)(content)
+  def f:((String,models.users.User) => (Html) => play.twirl.api.HtmlFormat.Appendable) = (pagename,user) => (content) => apply(pagename,user)(content)
 
   def ref: this.type = this
 
@@ -111,11 +117,11 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Wed Feb 20 16:14:55 GMT 2019
-                  SOURCE: /home/wdd/lab5CRUDCDU/app/views/main.scala.html
-                  HASH: 1424f35358791fe26aca286e511f3f0d655d0f9a
-                  MATRIX: 952->1|1077->33|1359->288|1387->289|1415->290|1500->348|1528->349|1561->355|1598->364|1627->365|1656->366|1732->414|1761->415|1794->421|1834->433|1863->434|1892->435|1939->454|1968->455|2001->461|2040->472|2069->473|2098->474|2165->513|2194->514|2227->520|2266->531|2295->532|2324->533|2390->571|2419->572|2452->578|2489->587|2518->588|2547->589|2587->601|2616->602|2645->604|2694->626|2723->634|2995->879|3026->901|3066->903|3112->918|3150->929|3165->935|3209->958|3263->985|3297->1010|3337->1012|3383->1027|3421->1038|3436->1044|3481->1068|3534->1095|3566->1118|3606->1120|3652->1135|3690->1146|3705->1152|3749->1175|3803->1203|3836->1227|3876->1229|3922->1244|3960->1255|3975->1261|4020->1285|4566->1805|4594->1812|4628->1819|5264->2428|5279->2434|5340->2474
-                  LINES: 28->1|33->2|40->9|40->9|40->9|40->9|40->9|41->10|41->10|41->10|41->10|41->10|41->10|42->11|42->11|42->11|42->11|42->11|42->11|43->12|43->12|43->12|43->12|43->12|43->12|44->13|44->13|44->13|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|45->14|46->15|47->16|47->16|56->25|56->25|56->25|56->25|56->25|56->25|56->25|57->26|57->26|57->26|57->26|57->26|57->26|57->26|58->27|58->27|58->27|58->27|58->27|58->27|58->27|59->28|59->28|59->28|59->28|59->28|59->28|59->28|75->44|75->44|76->45|94->63|94->63|94->63
+                  DATE: Thu Feb 21 16:48:09 GMT 2019
+                  SOURCE: /home/wdd/year2Project/year2Project/projectCarRental/app/views/main.scala.html
+                  HASH: c7494e34370826876f483064405076d042631cdb
+                  MATRIX: 970->1|1120->58|1402->313|1430->314|1458->315|1543->373|1571->374|1604->380|1641->389|1670->390|1699->391|1775->439|1804->440|1837->446|1877->458|1906->459|1935->460|1982->479|2011->480|2044->486|2083->497|2112->498|2141->499|2208->538|2237->539|2270->545|2309->556|2338->557|2367->558|2433->596|2462->597|2495->603|2532->612|2561->613|2590->614|2630->626|2659->627|2688->629|2737->651|2766->659|3038->904|3069->926|3109->928|3155->943|3193->954|3208->960|3252->983|3306->1010|3340->1035|3380->1037|3426->1052|3464->1063|3479->1069|3524->1093|3577->1120|3609->1143|3649->1145|3695->1160|3733->1171|3748->1177|3792->1200|3846->1228|3879->1252|3919->1254|3965->1269|3998->1276|4023->1292|4062->1293|4095->1299|4132->1309|4147->1315|4193->1340|4231->1361|4244->1366|4283->1367|4316->1373|4353->1383|4368->1389|4413->1413|4461->1431|4492->1435|5026->1943|5054->1950|5088->1957|5724->2566|5739->2572|5800->2612
+                  LINES: 28->1|33->2|40->9|40->9|40->9|40->9|40->9|41->10|41->10|41->10|41->10|41->10|41->10|42->11|42->11|42->11|42->11|42->11|42->11|43->12|43->12|43->12|43->12|43->12|43->12|44->13|44->13|44->13|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|45->14|46->15|47->16|47->16|56->25|56->25|56->25|56->25|56->25|56->25|56->25|57->26|57->26|57->26|57->26|57->26|57->26|57->26|58->27|58->27|58->27|58->27|58->27|58->27|58->27|59->28|59->28|59->28|59->28|60->29|60->29|60->29|61->30|61->30|61->30|61->30|62->31|62->31|62->31|63->32|63->32|63->32|63->32|64->33|65->34|81->50|81->50|82->51|100->69|100->69|100->69
                   -- GENERATED --
               */
           

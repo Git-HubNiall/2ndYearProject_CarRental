@@ -22,15 +22,15 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object about extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object about extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](_display_(/*2.2*/main("About")/*2.15*/{_display_(Seq[Any](format.raw/*2.16*/("""
+Seq[Any](_display_(/*2.2*/main("About", user)/*2.21*/{_display_(Seq[Any](format.raw/*2.22*/("""
 """),format.raw/*3.1*/("""<h1>About Us!</h1>
 <h3>We have been in business forever</h3>
 """)))}),format.raw/*5.2*/("""	    """))
@@ -38,9 +38,9 @@ Seq[Any](_display_(/*2.2*/main("About")/*2.15*/{_display_(Seq[Any](format.raw/*2
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(user)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (user) => apply(user)
 
   def ref: this.type = this
 
@@ -49,11 +49,11 @@ Seq[Any](_display_(/*2.2*/main("About")/*2.15*/{_display_(Seq[Any](format.raw/*2
 
               /*
                   -- GENERATED --
-                  DATE: Wed Feb 20 14:38:22 GMT 2019
-                  SOURCE: /home/wdd/lab5CRUDCDU/app/views/about.scala.html
-                  HASH: ce6df243cb7b9c716411284f8f103320afa66c7c
-                  MATRIX: 1030->2|1051->15|1089->16|1116->17|1207->79
-                  LINES: 33->2|33->2|33->2|34->3|36->5
+                  DATE: Thu Feb 21 16:48:09 GMT 2019
+                  SOURCE: /home/wdd/year2Project/year2Project/projectCarRental/app/views/about.scala.html
+                  HASH: 914ed9c8ca8e88550c9d5293c48862708d0a19cb
+                  MATRIX: 959->1|1078->28|1105->47|1143->48|1170->49|1261->111
+                  LINES: 28->1|33->2|33->2|33->2|34->3|36->5
                   -- GENERATED --
               */
           
