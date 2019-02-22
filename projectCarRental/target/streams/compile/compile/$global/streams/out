@@ -1,49 +1,12 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/addItem.scala.html:2:3: not found: value itemForm[0m
-[0m[[0m[31merror[0m] [0m[0m@(itemForm: Form[models.ItemOnSale])[0m
-[0m[[0m[31merror[0m] [0m[0m  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/addItem.scala.html:24:24: not found: value itemForm[0m
-[0m[[0m[31merror[0m] [0m[0m            @inputText(itemForm("name"), '_label -> "Name", 'class -> "form-control")[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/addItem.scala.html:26:17: not found: value itemForm[0m
-[0m[[0m[31merror[0m] [0m[0m                itemForm("category.id"),[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/addItem.scala.html:31:24: not found: value itemForm[0m
-[0m[[0m[31merror[0m] [0m[0m            @inputText(itemForm("description"), '_label -> "Description", 'class -> "form-control")[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/addItem.scala.html:32:24: not found: value itemForm[0m
-[0m[[0m[31merror[0m] [0m[0m            @inputText(itemForm("stock"), '_label -> "Stock", 'class -> "form-control")[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/addItem.scala.html:33:24: not found: value itemForm[0m
-[0m[[0m[31merror[0m] [0m[0m            @inputText(itemForm("price"), '_label -> "Price", 'class -> "form-control")[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/addItem.scala.html:35:24: not found: value itemForm[0m
-[0m[[0m[31merror[0m] [0m[0m            @inputText(itemForm("id"), '_label -> "", 'hidden -> "hidden")[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/login.scala.html:2:3: not found: value loginForm[0m
-[0m[[0m[31merror[0m] [0m[0m@(loginForm: Form[models.users.Login])[0m
-[0m[[0m[31merror[0m] [0m[0m  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/login.scala.html:7:9: not found: value loginForm[0m
-[0m[[0m[31merror[0m] [0m[0m    @if(loginForm.hasGlobalErrors){[0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/login.scala.html:9:23: not found: value loginForm[0m
-[0m[[0m[31merror[0m] [0m[0m            @for(e <- loginForm.globalErrors){[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/login.scala.html:21:24: not found: value loginForm[0m
-[0m[[0m[31merror[0m] [0m[0m            @inputText(loginForm("email"), '_label -> "",[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/login.scala.html:25:24: not found: value loginForm[0m
-[0m[[0m[31merror[0m] [0m[0m            @inputText(loginForm("password"), '_label -> "",[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/onsale.scala.html:2:3: not found: value items[0m
-[0m[[0m[31merror[0m] [0m[0m@(items: List[models.ItemOnSale],categories: List[models.Category])[0m
-[0m[[0m[31merror[0m] [0m[0m  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/onsale.scala.html:2:34: not found: value categories[0m
-[0m[[0m[31merror[0m] [0m[0m@(items: List[models.ItemOnSale],categories: List[models.Category])[0m
-[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/onsale.scala.html:17:19: not found: value categories[0m
-[0m[[0m[31merror[0m] [0m[0m		        @for(c<-categories) {[0m
-[0m[[0m[31merror[0m] [0m[0m		                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/year2Project/projectCarRental/app/views/onsale.scala.html:43:21: not found: value items[0m
-[0m[[0m[31merror[0m] [0m[0m            @for(i<-items) {[0m
-[0m[[0m[31merror[0m] [0m[0m                    ^[0m
-[0m[[0m[31merror[0m] [0m[0m16 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/HomeController.java:64:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class with[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
+[0m[[0m[31merror[0m] [0m[0m@with(AuthAdmin.class)[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/HomeController.java:104:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class with[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
+[0m[[0m[31merror[0m] [0m[0m@with(AuthAdmin.class)[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/HomeController.java:119:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class with[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
+[0m[[0m[31merror[0m] [0m[0m@with(AuthAdmin.class)[0m

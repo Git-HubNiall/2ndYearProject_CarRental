@@ -50,8 +50,8 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Feb 21 16:48:09 GMT 2019
-                  SOURCE: /home/wdd/year2Project/year2Project/projectCarRental/app/views/index.scala.html
+                  DATE: Fri Feb 22 08:48:34 GMT 2019
+                  SOURCE: /home/wdd/year2Project/projectCarRental/app/views/index.scala.html
                   HASH: c6bebd12776e080358000ada183369c191cbf35d
                   MATRIX: 959->1|1079->26|1107->29|1133->47|1171->48|1199->50|1384->206
                   LINES: 28->1|33->1|34->2|34->2|34->2|35->3|37->5

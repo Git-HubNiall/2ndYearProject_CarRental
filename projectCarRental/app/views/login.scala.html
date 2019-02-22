@@ -1,5 +1,4 @@
-@(user: models.users.User)
-@(loginForm: Form[models.users.Login])
+@(loginForm: Form[models.users.Login], user: models.users.User)
 @import helper._ 
 
 @main("Login", user){
@@ -11,6 +10,14 @@
             }
         </p>
     }
+    
+    @* Display error message from flash, if it is set *@
+    @if(flash.containsKey("error")){
+        <div class="alert alert-success">
+            @flash.get("error")
+        </div>
+    }
+
     @helper.form(action = controllers.routes.LoginController.loginSubmit()){
         @* CSRF attack prevention *@
         @* This token, sent by the controller, will be used to authenticate 

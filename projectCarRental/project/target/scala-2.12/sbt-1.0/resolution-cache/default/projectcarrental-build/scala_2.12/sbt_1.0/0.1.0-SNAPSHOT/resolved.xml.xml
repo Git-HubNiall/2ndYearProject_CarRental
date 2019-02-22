@@ -4,7 +4,7 @@
 		module="projectcarrental-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20190221161754"
+		publication="20190222084643"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

@@ -61,6 +61,7 @@ public class HomeController extends Controller {
 }
 
 @Security.Authenticated(Secured.class)
+@With(AuthAdmin.class)
 @Transactional
 public Result addItemSubmit() {
     // We use the method bindFromRequest() to populate our Form<ItemOnSale> object with the
@@ -100,6 +101,7 @@ public Result addItemSubmit() {
     }
 }
 @Security.Authenticated(Secured.class)
+@With(AuthAdmin.class)
 @Transactional
 public Result deleteItem(Long id) {
 
@@ -114,6 +116,7 @@ public Result deleteItem(Long id) {
 }
 
 @Security.Authenticated(Secured.class)
+@With(AuthAdmin.class)
 public Result updateItem(Long id) {
     ItemOnSale i;
     Form<ItemOnSale> itemForm;
