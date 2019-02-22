@@ -1,0 +1,24 @@
+@(users: List[models.users Administrator] user: models.users.User)
+@main("Administrators", user)
+{
+    <h1>Current administrators</h1>
+
+
+        @if(flash.containsKey("success"))
+        {
+            <div class="alert alert-warning">
+
+                @flash.get("success")
+            </div>
+        }
+
+
+
+}
+
+
+    <div class="col-sm-9">
+        <h4>Here are all the current administrators on the system.</h4>
+        <table class="table tavle-bordered table-hover table-condensed"></table>
+    </div>
+

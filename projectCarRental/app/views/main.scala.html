@@ -32,6 +32,11 @@
 					<a href="@routes.LoginController.login()">Log In</a>
 				}
 			</li>
+
+				@if((user != null) && ("admin".equals(user.getRole()))){
+					<li @if(pagename == "Administrators") {class="active"}></li><a href="@routes.HomeController.usersAdmin()">View Admin</a></li>	
+				} 
+			
 		</ul>
 	    </div>
 	</nav>

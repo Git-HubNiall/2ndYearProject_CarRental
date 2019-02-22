@@ -135,4 +135,13 @@ public Result updateItem(Long id) {
     return ok(addItem.render(itemForm, User.getUserById(session().get("email"))));
 }
 
+
+    public Result usersAdmin()
+    {
+        List <Administrator> userList = null;
+        userList = Administrator.findAll();
+
+        return ok(admin.render(userList, User.getUserById(session().get("email"))));
+    }
+
 }
