@@ -1,0 +1,34 @@
+@(userForm: Form[models.users.Administrator], user: models.users.User)
+
+@import models.users.User
+@import helper._
+
+@main("Add Admin", user)
+{
+    <p class="lead">Add a new Administrator</p>
+
+
+    @form(action=routes.HomeController.addAdminSubmit(), 'class -> "form-horizontal", 'role -> "form")
+    {
+        @CSRF.formField
+
+        @inputText(userForm("email"), '_label -> "Email", 'class -> "form-control")
+        @inputText(userForm("name"), '_label -> "Name", 'class -> "form-control")
+        @inputText(userForm("password"), '_label -> "Password", 'class -> "form-control")
+        @inputText(userForm("role").copy(value=Some("admin")), '_label -> "", 'hidden -> "hidden")
+        @inputText(userForm("email"), '_label -> "", 'hidden -> "hidden")
+
+
+
+
+
+        <div class="actions">
+            <input type="submit" value="Add/Update Admin" class="btn btn-primary">
+            <a href="@routes.HomeController.usersAdmin()">
+                <button type="button" class="btn btn-warning">Cancel</button>
+            </a>
+
+        </div>
+
+    }
+}

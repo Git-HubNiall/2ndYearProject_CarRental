@@ -144,4 +144,95 @@ public Result updateItem(Long id) {
         return ok(admin.render(userList, User.getUserById(session().get("email"))));
     }
 
+
+    @Security.Authenticated(Secured.class)
+    public Result addAdmin()
+    {
+        Form<Administrator> userForm = formFactory.form(Administrator.class);
+        return ok(addAdmin.render(userForm, User.getUserById(session().get("email"))));
+    }
+
+
+    @Security.Authenticated(Secured.class)
+    @Transactional
+    public Result addAdminSubmit()
+    {
+        Form<Administrator> newUserForm = formFactory.form(Administrator.class).bindFromRequest();
+        if(newUserForm.hasErrors())
+        {
+            return badRequest(addAdmin.render(newUserForm, User.getUserById(session().get("email"))));
+        }
+        else{
+            Administrator newUser = newUserForm.get();
+            System.out.println("Name: " + newUserForm.field("name").getValue().get());
+            System.out.println("Email: " + newUserForm.field("email").getValue().get());
+            System.out.println("Password: " + newUserForm.field("password").getValue().get());
+            System.out.println("Role: " + newUserForm.field("role").getValue().get());
+
+
+            if(User.getUserById(newUser.getEmail()) == null)
+            {
+                newUser.save();
+            }
+            else{
+                newUser.update();
+            }
+
+            flash("success", "User " + newUser.getName() + " was added/updated.");
+            return redirect(controllers.routes.HomeController.usersAdmin());
+
+
+
+        }
+
+
+
+
+
+    }
+
+    @Security.Authenticated(Secured.class)
+    public Result updateAdmin(String email)
+    {
+        Administrator u;
+        Form<Administrator> userForm;
+
+        try{
+
+            u = (Administrator),User.getUserById(email);
+            u.update();
+
+            userForm = formFactory.form(Administrator.class).fill(u);
+        }
+        catch(Exception ex)
+        {
+            return badRequest("error");
+        }
+
+
+        return ok(addAdmin.render(userForm, User.getUserById(session().get("email"))));
+
+    }
+
+
+
+    @Security.Authenticated(Secured.class)
+    @Transactional
+    @With(AuthAdmin.class)
+    public Result deleteAdmin(String email)
+    {
+        Administrator u =(Administrator) User.getUserById(email);
+        u.delete();
+
+        flash("success", "User has been deleted.");
+
+        return redirect(controllers.routes.HomeController.usersAdmin());
+        
+    }
+
+
+
+
+
+
 }

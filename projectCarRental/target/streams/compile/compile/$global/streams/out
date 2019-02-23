@@ -1,12 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/HomeController.java:64:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class with[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
-[0m[[0m[31merror[0m] [0m[0m@with(AuthAdmin.class)[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/HomeController.java:104:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class with[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
-[0m[[0m[31merror[0m] [0m[0m@with(AuthAdmin.class)[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/HomeController.java:119:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class with[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
-[0m[[0m[31merror[0m] [0m[0m@with(AuthAdmin.class)[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/views/admin.scala.html:1:1: identifier expected but $XMLSTART$< found.[0m
+[0m[[0m[31merror[0m] [0m[0m@(users: List[models.users.Administrator] user: models.users.User)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/views/admin.scala.html:78:6: ']' expected but eof found.[0m
+[0m[[0m[31merror[0m] [0m[0m    }[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
