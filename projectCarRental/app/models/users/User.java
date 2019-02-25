@@ -1,16 +1,12 @@
 package models.users;
-
+ 
 import java.util.*;
 import javax.persistence.*;
 import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 
-@Entity
-@Table(name = "user")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
-@DiscriminatorValue("u")
+
 public class User extends Model {
 
     @Id
@@ -84,5 +80,15 @@ public class User extends Model {
             return find.query().where().eq("email", id).findUnique();
         }
     }
+
+
+
+    public static final List<User> findAll()
+    {
+        return User.find.all();
+    }
+
+
+    
 
 }

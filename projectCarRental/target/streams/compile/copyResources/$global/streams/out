@@ -1,9 +1,9 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/year2Project/projectCarRental/conf/evolutions,/home/wdd/year2Project/projectCarRental/target/scala-2.12/classes/evolutions)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/year2Project/projectCarRental/conf/evolutions/default,/home/wdd/year2Project/projectCarRental/target/scala-2.12/classes/evolutions/default)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/year2Project/projectCarRental/conf/evolutions/default/3.sql,/home/wdd/year2Project/projectCarRental/target/scala-2.12/classes/evolutions/default/3.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/year2Project/projectCarRental/conf/evolutions/default/2.sql,/home/wdd/year2Project/projectCarRental/target/scala-2.12/classes/evolutions/default/2.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/year2Project/projectCarRental/conf/evolutions/default/1.sql,/home/wdd/year2Project/projectCarRental/target/scala-2.12/classes/evolutions/default/1.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/year2Project/projectCarRental/conf/application.conf,/home/wdd/year2Project/projectCarRental/target/scala-2.12/classes/application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/year2Project/projectCarRental/conf/logback.xml,/home/wdd/year2Project/projectCarRental/target/scala-2.12/classes/logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/year2Project/projectCarRental/conf/routes,/home/wdd/year2Project/projectCarRental/target/scala-2.12/classes/routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/media/sf_student/year2Project/projectCarRental/conf/application.conf,/media/sf_student/year2Project/projectCarRental/target/scala-2.12/classes/application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/media/sf_student/year2Project/projectCarRental/conf/evolutions,/media/sf_student/year2Project/projectCarRental/target/scala-2.12/classes/evolutions)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/media/sf_student/year2Project/projectCarRental/conf/evolutions/default,/media/sf_student/year2Project/projectCarRental/target/scala-2.12/classes/evolutions/default)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/media/sf_student/year2Project/projectCarRental/conf/evolutions/default/1.sql,/media/sf_student/year2Project/projectCarRental/target/scala-2.12/classes/evolutions/default/1.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/media/sf_student/year2Project/projectCarRental/conf/evolutions/default/2.sql,/media/sf_student/year2Project/projectCarRental/target/scala-2.12/classes/evolutions/default/2.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/media/sf_student/year2Project/projectCarRental/conf/evolutions/default/3.sql,/media/sf_student/year2Project/projectCarRental/target/scala-2.12/classes/evolutions/default/3.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/media/sf_student/year2Project/projectCarRental/conf/logback.xml,/media/sf_student/year2Project/projectCarRental/target/scala-2.12/classes/logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/media/sf_student/year2Project/projectCarRental/conf/routes,/media/sf_student/year2Project/projectCarRental/target/scala-2.12/classes/routes)[0m

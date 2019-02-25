@@ -1,5 +1,5 @@
 package controllers;
-
+ 
 import play.mvc.*;
 
 import play.api.Environment;
@@ -25,8 +25,9 @@ import views.html.*;
 
         public Result login() {
             Form<Login> loginForm = formFactory.form(Login.class);
-            return ok(login.render(loginForm, User.getUserById(session().get("email"))));
-         }
+            return ok(login.render(loginForm));
+           }
+           
 
     public Result loginSubmit(){
             Form<Login> loginForm = formFactory.form(Login.class).bindFromRequest();
@@ -49,4 +50,3 @@ import views.html.*;
     }
 
 }
-   
