@@ -44,13 +44,13 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 	    """),format.raw/*13.6*/(""".midcol h3 """),format.raw/*13.17*/("""{"""),format.raw/*13.18*/(""" """),format.raw/*13.19*/("""text-align: center; color: steelblue; """),format.raw/*13.57*/("""}"""),format.raw/*13.58*/("""
 	    """),format.raw/*14.6*/(""".redtext """),format.raw/*14.15*/("""{"""),format.raw/*14.16*/(""" """),format.raw/*14.17*/("""color: red; """),format.raw/*14.29*/("""}"""),format.raw/*14.30*/("""
 	"""),format.raw/*15.2*/("""</style>
-	<title>OFM """),_display_(/*16.14*/pagename),format.raw/*16.22*/("""</title>
+	<title>OnlineCarRental """),_display_(/*16.26*/pagename),format.raw/*16.34*/("""</title>
     </head>
     <body>
 	<nav class="navbar navbar-inverse">
 	    <div class="container-fluid">
 		<div class="navbar-header">
-		    <a class="navbar-brand" href="#">WebSiteName</a>
+		    <a class="navbar-brand" href="#">OnlineCarRental</a>
 		</div>
 		<ul class="nav navbar-nav">
             <li """),_display_(/*25.18*/if(pagename == "Home")/*25.40*/ {_display_(Seq[Any](format.raw/*25.42*/("""class="active"""")))}),format.raw/*25.57*/("""><a href=""""),_display_(/*25.68*/routes/*25.74*/.HomeController.index()),format.raw/*25.97*/("""">Home</a></li>
@@ -72,9 +72,9 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 	    <div class="row">
 		<div class="col-sm-2">
 		    <div class="well sidecol">
-			<h2>News</h2>
-			<h3>New product sub-category</h3>
-			<p>Following the sudden and unprecedented volumes of trade in fashion paper bags, our <span class="redtext">bags</span> category has been extended to include a seventh subcategory, <span class="redtext">paper handbags</span>.
+			<h2>Car Rental</h2>
+			<h3>Rent cars by booking online</h3>
+			<p>choose cars to rent from, <br> 5 Seaters, <br> 7 Seaters, <br> Mini buses</p>
 		    </div>
 		</div>
 		<div class="col-sm-8">
@@ -84,16 +84,16 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 		</div>
 		<div class="col-sm-2">
 		    <div class="well sidecol">
-			<h2>Events</h2>
-			<h3>The 153rd Meet for Real event</h3>
-			<p>The popular <span class="redtext">Meet for Real</span> event takes place this Sunday at the Square Park, from 7am until 1pm. It will yet again give flea-market enthusiasts a chance to engage in a bit of live bartering and banter with their fellow sitesters.</p>
+			<h2></h2>
+			<h3></h3>
+			<p></p>
 		    </div>
 		</div>
 	    </div>
 	    <div class="row">
 		<div class="col-sm-12">
 		    <div class="well footer">
-			Website created by ABC Sights
+			Website created by JAN
 		    </div>
 		</div>
 	    </div>
@@ -118,10 +118,10 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Tue Feb 26 12:45:36 GMT 2019
-                  SOURCE: /media/sf_student/projectCarRental/app/views/main.scala.html
-                  HASH: 978e78653502e17fcf1fa6b228a26f0fc792f74a
-                  MATRIX: 970->1|1119->57|1401->312|1429->313|1457->314|1542->372|1570->373|1603->379|1640->388|1669->389|1698->390|1774->438|1803->439|1836->445|1876->457|1905->458|1934->459|1981->478|2010->479|2043->485|2082->496|2111->497|2140->498|2207->537|2236->538|2269->544|2308->555|2337->556|2366->557|2432->595|2461->596|2494->602|2531->611|2560->612|2589->613|2629->625|2658->626|2687->628|2736->650|2765->658|3037->903|3068->925|3108->927|3154->942|3192->953|3207->959|3251->982|3305->1009|3339->1034|3379->1036|3425->1051|3463->1062|3478->1068|3523->1092|3576->1119|3608->1142|3648->1144|3694->1159|3732->1170|3747->1176|3791->1199|3849->1231|3882->1255|3922->1257|3968->1272|4001->1279|4026->1295|4066->1297|4099->1303|4136->1313|4151->1319|4197->1344|4234->1364|4247->1369|4286->1370|4319->1376|4356->1386|4371->1392|4416->1416|4469->1439|4499->1442|5025->1942|5053->1949|5087->1956|5723->2565|5738->2571|5799->2611
+                  DATE: Tue Feb 26 21:42:43 GMT 2019
+                  SOURCE: /home/wdd/year2Project/projectCarRental/app/views/main.scala.html
+                  HASH: 72df949e951efa4d7ad8bc4bcd3c818f38aa0f0d
+                  MATRIX: 970->1|1119->57|1401->312|1429->313|1457->314|1542->372|1570->373|1603->379|1640->388|1669->389|1698->390|1774->438|1803->439|1836->445|1876->457|1905->458|1934->459|1981->478|2010->479|2043->485|2082->496|2111->497|2140->498|2207->537|2236->538|2269->544|2308->555|2337->556|2366->557|2432->595|2461->596|2494->602|2531->611|2560->612|2589->613|2629->625|2658->626|2687->628|2748->662|2777->670|3053->919|3084->941|3124->943|3170->958|3208->969|3223->975|3267->998|3321->1025|3355->1050|3395->1052|3441->1067|3479->1078|3494->1084|3539->1108|3592->1135|3624->1158|3664->1160|3710->1175|3748->1186|3763->1192|3807->1215|3865->1247|3898->1271|3938->1273|3984->1288|4017->1295|4042->1311|4082->1313|4115->1319|4152->1329|4167->1335|4213->1360|4250->1380|4263->1385|4302->1386|4335->1392|4372->1402|4387->1408|4432->1432|4485->1455|4515->1458|4905->1822|4933->1829|4967->1836|5304->2146|5319->2152|5380->2192
                   LINES: 28->1|33->2|40->9|40->9|40->9|40->9|40->9|41->10|41->10|41->10|41->10|41->10|41->10|42->11|42->11|42->11|42->11|42->11|42->11|43->12|43->12|43->12|43->12|43->12|43->12|44->13|44->13|44->13|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|45->14|46->15|47->16|47->16|56->25|56->25|56->25|56->25|56->25|56->25|56->25|57->26|57->26|57->26|57->26|57->26|57->26|57->26|58->27|58->27|58->27|58->27|58->27|58->27|58->27|60->29|60->29|60->29|60->29|61->30|61->30|61->30|62->31|62->31|62->31|62->31|63->32|63->32|63->32|64->33|64->33|64->33|64->33|66->35|67->36|82->51|82->51|83->52|101->70|101->70|101->70
                   -- GENERATED --
               */

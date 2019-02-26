@@ -32,8 +32,8 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 
 Seq[Any](format.raw/*1.27*/("""
 """),_display_(/*2.2*/main("Home",user)/*2.19*/{_display_(Seq[Any](format.raw/*2.20*/("""
-"""),format.raw/*3.1*/("""<h1>Welcome to the Online Flea Market! </h1>
-<h3>The place where you can buy anything and sell anyting<br/> (as long as it is legal and morally ok)</h3>
+"""),format.raw/*3.1*/("""<h1>Welcome to Online Car Rental! </h1>
+<h3>The place where you can rent Cars for as long as you want</h3>
 """)))}),format.raw/*5.2*/("""		  """))
       }
     }
@@ -50,10 +50,10 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Feb 26 12:45:36 GMT 2019
-                  SOURCE: /media/sf_student/projectCarRental/app/views/index.scala.html
-                  HASH: 61aa5205c3e23e70a98f9bbb3cd29ff62d951e17
-                  MATRIX: 959->1|1079->26|1107->29|1132->46|1170->47|1198->49|1383->205
+                  DATE: Tue Feb 26 21:42:19 GMT 2019
+                  SOURCE: /home/wdd/year2Project/projectCarRental/app/views/index.scala.html
+                  HASH: 508cd30f01ec908cae10660022da7bb921d64d91
+                  MATRIX: 959->1|1079->26|1107->29|1132->46|1170->47|1198->49|1337->159
                   LINES: 28->1|33->1|34->2|34->2|34->2|35->3|37->5
                   -- GENERATED --
               */
