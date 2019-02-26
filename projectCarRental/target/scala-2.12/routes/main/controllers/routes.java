@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/media/sf_student/year2Project/projectCarRental/conf/routes
-// @DATE:Mon Feb 25 10:45:30 GMT 2019
+// @SOURCE:/media/sf_student/projectCarRental/conf/routes
+// @DATE:Tue Feb 26 12:49:46 GMT 2019
 
 package controllers;
 

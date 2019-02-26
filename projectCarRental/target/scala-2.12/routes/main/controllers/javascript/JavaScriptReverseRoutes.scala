@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/media/sf_student/year2Project/projectCarRental/conf/routes
-// @DATE:Mon Feb 25 10:45:30 GMT 2019
+// @SOURCE:/media/sf_student/projectCarRental/conf/routes
+// @DATE:Tue Feb 26 12:49:46 GMT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,7 +11,7 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers.javascript {
 
-  // @LINE:32
+  // @LINE:30
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:32
+    // @LINE:30
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -31,7 +31,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:27
+  // @LINE:25
   class ReverseCountController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -39,7 +39,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:27
+    // @LINE:25
     def count: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CountController.count",
       """
@@ -131,7 +131,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:29
+  // @LINE:27
   class ReverseAsyncController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -139,7 +139,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:29
+    // @LINE:27
     def message: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AsyncController.message",
       """
@@ -151,7 +151,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:18
+  // @LINE:19
   class ReverseLoginController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -159,7 +159,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:20
     def loginSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LoginController.loginSubmit",
       """
@@ -169,7 +169,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:23
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LoginController.logout",
       """
@@ -179,7 +179,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
+    // @LINE:19
     def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LoginController.login",
       """

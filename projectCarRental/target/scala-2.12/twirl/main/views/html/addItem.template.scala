@@ -25,7 +25,7 @@ import play.core.j.PlayFormsMagicForJava._
 object addItem extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Form[models.ItemOnSale],models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(itemForm: Form[models.ItemOnSale], user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(itemForm: Form[models.ItemOnSale],user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*3.2*/import helper._
@@ -33,7 +33,7 @@ object addItem extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Ht
 
 Seq[Any](format.raw/*2.1*/("""
 """),format.raw/*4.1*/("""
-"""),_display_(/*5.2*/main("Add Item", user)/*5.24*/{_display_(Seq[Any](format.raw/*5.25*/("""
+"""),_display_(/*5.2*/main("Add Item",user)/*5.23*/{_display_(Seq[Any](format.raw/*5.24*/("""
     """),format.raw/*6.5*/("""<p class="lead">Add a new item</p>
 
     <!-- Use a views.html.helpers package method to create the form (instead of html)-->
@@ -91,10 +91,10 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 25 10:42:52 GMT 2019
-                  SOURCE: /media/sf_student/year2Project/projectCarRental/app/views/addItem.scala.html
-                  HASH: 9008fd60eef4b8f90d8c01cc1bee531ddb7e2f4d
-                  MATRIX: 985->1|1118->64|1162->62|1189->80|1216->82|1246->104|1284->105|1315->110|1634->403|1740->499|1781->501|1818->538|1855->637|1892->647|1905->651|1936->661|1973->671|2347->1018|2374->1024|2403->1025|2655->1250|2748->1322|2789->1336|3064->1590|3105->1604|3213->1690|3254->1704|3349->1778|3390->1792|3485->1866|3527->1881|3609->1942|3663->1968|4055->2333|4070->2339|4116->2364|4276->2494|4305->2512|4337->2514
+                  DATE: Tue Feb 26 12:45:36 GMT 2019
+                  SOURCE: /media/sf_student/projectCarRental/app/views/addItem.scala.html
+                  HASH: 068f0f85904a7baedd437cee07be9163bb1492d7
+                  MATRIX: 985->1|1117->63|1161->61|1188->79|1215->81|1244->102|1282->103|1313->108|1632->401|1738->497|1779->499|1816->536|1853->635|1890->645|1903->649|1934->659|1971->669|2345->1016|2372->1022|2401->1023|2653->1248|2746->1320|2787->1334|3062->1588|3103->1602|3211->1688|3252->1702|3347->1776|3388->1790|3483->1864|3525->1879|3607->1940|3661->1966|4053->2331|4068->2337|4114->2362|4274->2492|4303->2510|4335->2512
                   LINES: 28->1|31->3|34->2|35->4|36->5|36->5|36->5|37->6|42->11|42->11|42->11|43->12|44->13|45->14|45->14|45->14|47->16|51->20|51->20|51->20|54->23|54->23|55->24|60->29|61->30|61->30|62->31|62->31|63->32|63->32|65->34|65->34|67->36|73->42|73->42|73->42|77->46|77->46|78->47
                   -- GENERATED --
               */
