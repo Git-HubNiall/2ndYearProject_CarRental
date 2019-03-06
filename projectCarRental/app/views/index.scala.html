@@ -1,0 +1,31 @@
+@(user: models.users.User)
+@main("Home",user){
+<h1>Welcome to Online Car Rental! </h1>
+<h3>The place where you can rent Cars for as long as you want</h3>
+
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-sm-6">
+        <div class="well sidecol">
+                <input type="text" placeholder="Search..">
+                <form action="/action_page.php">
+                    Pick up date:
+                    <input type="date" name="pickUp">
+                    <input type="submit">
+                </form>
+
+                <form action="/action_page.php">
+                    Drop off date:
+                    <input type="date" name="dropOff">
+                    <input type="submit">
+                </form>	
+        </div>
+    </div>
+    
+    <div class="col-sm-6">
+        <div class="well sidecol">
+        
+        </div>
+    </div>
+    </div>
+}		  
