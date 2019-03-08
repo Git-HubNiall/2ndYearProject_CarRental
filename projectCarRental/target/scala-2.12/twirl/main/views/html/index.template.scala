@@ -55,8 +55,8 @@ Seq[Any](format.raw/*1.27*/("""
     </div>
     
     <div class="col-sm-6">
-        <div class="well sidecol">
-        
+        <div class="well sidecol2">
+                <img class="collage" src=""""),_display_(/*27.44*/routes/*27.50*/.Assets.versioned("images/carlogos.png")),format.raw/*27.90*/("""" alt="carlogos">
         </div>
     </div>
     </div>
@@ -76,11 +76,11 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Mar 06 21:30:41 GMT 2019
-                  SOURCE: /home/wdd/Desktop/projectError/year2Project/projectCarRental/app/views/index.scala.html
-                  HASH: 7de6bf032ed7ebb48087e992bb6a67843f9de1b7
-                  MATRIX: 959->1|1079->26|1107->29|1132->46|1170->47|1198->49|2087->908
-                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|63->31
+                  DATE: Fri Mar 08 12:50:11 GMT 2019
+                  SOURCE: /home/wdd/year2Project/projectCarRental/app/views/index.scala.html
+                  HASH: 661279daa8457d95a570261f515befd681b93869
+                  MATRIX: 959->1|1079->26|1107->29|1132->46|1170->47|1198->49|2077->901|2092->907|2153->947|2243->1007
+                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|59->27|59->27|59->27|63->31
                   -- GENERATED --
               */
           
