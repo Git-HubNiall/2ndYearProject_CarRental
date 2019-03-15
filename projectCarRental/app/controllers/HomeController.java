@@ -113,5 +113,75 @@ public Result updateItem(Long id) {
     return ok(addItem.render(itemForm,User.getUserById(session().get("email"))));
 }
 
+public Result usersAdmin() {
+    List<Administrator> userList = null;
+
+    userList = Administrator.findAll();
+
+    return ok(admin.render(userList,User.getUserById(session().get("email"))));
+
+ }
+
+ @Security.Authenticated(Secured.class)
+@Transactional
+
+public Result addUserSubmit()
+ {
+Form<User> newUserForm = formFactory.form(User.class).bindFromRequest();
+if (newUserForm.hasErrors()) {
+badRequest(addUser.render(newUserForm,User.getUserById(session().get("email"))));
+} else {
+    User newUser = newUserForm.get();
+    
+    if(User.getUserById(newUser.getEmail())==null){
+        newUser.save();
+    }else{
+        newUser.update();
+    }
+    flash("success", "User " + newUser.getName() + " was added/updated.");
+
+    return redirect(controllers.routes.HomeController.users()); 
+    }
+}
+
+@Security.Authenticated(Secured.class)
+public Result addUser() {
+    Form<User> userForm = formFactory.form(User.class);
+    return ok(addUser.render(userForm,User.getUserById(session().get("email"))));
+}
+
+@Security.Authenticated(Secured.class)
+@Transactional
+@With(AuthAdmin.class)
+public Result deleteUser(String email) {
+
+
+        User u = User.getUserById(email);
+        u.delete();
+
+    flash("success", "User has been deleted.");
+    return redirect(controllers.routes.HomeController.users());
+}
+
+Security.Authenticated(Secured.class)
+public Result updateUser(String email) {
+    User u;
+    Form<User> userForm;
+
+    try {
+        u = User.getUserById(email);
+        u.update();
+
+        userForm = formFactory.form(User.class).fill(u);
+    } catch (Exception ex) {
+        return badRequest("error");
+    }
+
+       return ok(addUser.render(userForm,User.getUserById(session().get("email"))));
+}
+
+
+
+
 
 }
