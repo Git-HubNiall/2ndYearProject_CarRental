@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/year2Project/projectCarRental/conf/routes
-// @DATE:Fri Mar 15 12:44:19 GMT 2019
+// @DATE:Sun Mar 17 20:23:15 GMT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,7 +11,7 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers.javascript {
 
-  // @LINE:39
+  // @LINE:49
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:39
+    // @LINE:49
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -31,7 +31,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:34
+  // @LINE:44
   class ReverseCountController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -39,7 +39,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:34
+    // @LINE:44
     def count: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CountController.count",
       """
@@ -59,22 +59,22 @@ package controllers.javascript {
     }
 
   
-    // @LINE:31
-    def updateUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.updateUser",
+    // @LINE:37
+    def addCustomer: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addCustomer",
       """
-        function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "updateUser/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addCustomer"})
         }
       """
     )
   
-    // @LINE:26
-    def addUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.addUser",
+    // @LINE:33
+    def deleteCustomer: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.deleteCustomer",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addUser"})
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteCustomer/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
@@ -85,6 +85,36 @@ package controllers.javascript {
       """
         function(id0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "updateItem/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:38
+    def addCustomerSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addCustomerSubmit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addCustomerSubmit"})
+        }
+      """
+    )
+  
+    // @LINE:25
+    def usersAdmin: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.usersAdmin",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "admin"})
+        }
+      """
+    )
+  
+    // @LINE:26
+    def addAdmin: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addAdmin",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addAdmin"})
         }
       """
     )
@@ -109,12 +139,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:28
-    def addUserSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.addUserSubmit",
+    // @LINE:31
+    def updateAdmin: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.updateAdmin",
       """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addUserSubmit"})
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "updateAdmin/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
@@ -139,22 +169,22 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:25
-    def users: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.users",
+    // @LINE:30
+    def deleteAdmin: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.deleteAdmin",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "users"})
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteAdmin/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
   
-    // @LINE:30
-    def deleteUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.deleteUser",
+    // @LINE:35
+    def usersCustomer: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.usersCustomer",
       """
-        function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteUser/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "customers"})
         }
       """
     )
@@ -165,6 +195,26 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+    // @LINE:34
+    def updateCustomer: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.updateCustomer",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "updateCustomer/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:28
+    def addAdminSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addAdminSubmit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addAdminSubmit"})
         }
       """
     )
@@ -181,7 +231,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:36
+  // @LINE:46
   class ReverseAsyncController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -189,7 +239,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:36
+    // @LINE:46
     def message: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AsyncController.message",
       """
@@ -219,12 +269,32 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:40
+    def registerUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.LoginController.registerUser",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "registerUser"})
+        }
+      """
+    )
+  
     // @LINE:23
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LoginController.logout",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
+        }
+      """
+    )
+  
+    // @LINE:41
+    def registerUserSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.LoginController.registerUserSubmit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "registerUserSubmit"})
         }
       """
     )

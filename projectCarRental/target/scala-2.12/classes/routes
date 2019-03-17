@@ -21,6 +21,25 @@ GET     /loginSubmit                controllers.LoginController.loginSubmit
 
 
 GET     /logout                      controllers.LoginController.logout
+
+GET     /admin                      controllers.HomeController.usersAdmin
+GET     /addAdmin                   controllers.HomeController.addAdmin
+
+POST    /addAdminSubmit             controllers.HomeController.addAdminSubmit
+
+GET     /deleteAdmin/:id            controllers.HomeController.deleteAdmin(id: String)
+GET     /updateAdmin/:id            controllers.HomeController.updateAdmin(id: String)
+
+GET     /deleteCustomer/:id         controllers.HomeController.deleteCustomer(id: String)
+GET     /updateCustomer/:id         controllers.HomeController.updateCustomer(id: String)
+GET     /customers                  controllers.HomeController.usersCustomer
+
+GET     /addCustomer                controllers.HomeController.addCustomer
+POST    /addCustomerSubmit          controllers.HomeController.addCustomerSubmit
+
+GET     /registerUser               controllers.LoginController.registerUser
+POST    /registerUserSubmit         controllers.LoginController.registerUserSubmit()
+
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code

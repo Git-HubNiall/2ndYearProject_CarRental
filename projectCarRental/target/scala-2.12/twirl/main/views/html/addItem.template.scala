@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object addItem extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Form[models.ItemOnSale],models.users.User,play.twirl.api.HtmlFormat.Appendable] {
+object addItem extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Form[models.products.ItemOnSale],models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(itemForm: Form[models.ItemOnSale],user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(itemForm: Form[models.products.ItemOnSale],user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*3.2*/import helper._
@@ -44,45 +44,44 @@ Seq[Any](format.raw/*2.1*/("""
         """),format.raw/*13.99*/("""
         """),_display_(/*14.10*/CSRF/*14.14*/.formField),format.raw/*14.24*/("""
 
-        """),format.raw/*16.9*/("""<!-- Use helper methods to add fields to the form -->
-        <!-- Note that the form fields are related to the fields of the itemForm object -->
-        <!-- Note the arguments that are being passed to the scala function inputText (they are 
-             essentially instructions for constructing an HTML input element)-->
-        <!-- Note the """),_display_(/*20.24*/select),format.raw/*20.30*/(""" """),format.raw/*20.31*/("""function's argument options. This needs to be a map of ids-to-names
-             and this is provided by the method Category.options(), which we added to the Category
-             class in the previous step. -->
-            """),_display_(/*23.14*/inputText(itemForm("name"), '_label -> "Name", 'class -> "form-control")),format.raw/*23.86*/("""
-            """),_display_(/*24.14*/select(
-                itemForm("category.id"),
-                options(Category.options),
-                '_label -> "Category", '_default -> "-- Choose a category --", 
-                '_showConstraints -> false, 'class -> "form-control"
-            )),format.raw/*29.14*/("""
-            """),_display_(/*30.14*/inputText(itemForm("description"), '_label -> "Description", 'class -> "form-control")),format.raw/*30.100*/("""
-            """),_display_(/*31.14*/inputText(itemForm("stock"), '_label -> "Stock", 'class -> "form-control")),format.raw/*31.88*/("""
-            """),_display_(/*32.14*/inputText(itemForm("price"), '_label -> "Price", 'class -> "form-control")),format.raw/*32.88*/("""
+        
+            """),_display_(/*17.14*/inputText(itemForm("name"), '_label -> "Name", 'class -> "form-control")),format.raw/*17.86*/("""
+            """),format.raw/*18.13*/("""<p><strong>Categories</strong></p>
+            """),_display_(/*19.14*/for((value, name) <- products.Category.options) yield /*19.61*/ {_display_(Seq[Any](format.raw/*19.63*/("""
+                """),format.raw/*20.17*/("""<input type="checkbox" name="catSelect[]" value=""""),_display_(/*20.67*/value),format.raw/*20.72*/(""""  
+                    """),_display_(/*21.22*/if(itemForm("id").getValue.isPresent && itemForm("id").getValue.get != "")/*21.96*/ {_display_(Seq[Any](format.raw/*21.98*/(""" 
+                        """),_display_(/*22.26*/if(products.Category.inCategory(value.toLong, itemForm("id").getValue.get.toLong))/*22.108*/ {_display_(Seq[Any](format.raw/*22.110*/("""
+                            """),format.raw/*23.29*/("""checked
+                        """)))}),format.raw/*24.26*/("""
+                    """)))}),format.raw/*25.22*/(""" 
+                """),format.raw/*26.17*/("""/> """),_display_(/*26.21*/name),format.raw/*26.25*/(""" """),format.raw/*26.26*/("""</br>
+            """)))}),format.raw/*27.14*/("""
+            """),format.raw/*28.13*/("""</p>
+            """),_display_(/*29.14*/inputText(itemForm("description"), '_label -> "Description", 'class -> "form-control")),format.raw/*29.100*/("""
+            """),_display_(/*30.14*/inputText(itemForm("stock"), '_label -> "Stock", 'class -> "form-control")),format.raw/*30.88*/("""
+            """),_display_(/*31.14*/inputText(itemForm("price"), '_label -> "Price", 'class -> "form-control")),format.raw/*31.88*/("""
 
-            """),_display_(/*34.14*/inputText(itemForm("id"), '_label -> "", 'hidden -> "hidden")),format.raw/*34.75*/("""
+            """),_display_(/*33.14*/inputText(itemForm("id"), '_label -> "", 'hidden -> "hidden")),format.raw/*33.75*/("""
             
-            """),format.raw/*36.13*/("""<!-- We use the bootstrap actions class for the buttons at the bottom:
+            """),format.raw/*35.13*/("""<!-- We use the bootstrap actions class for the buttons at the bottom:
                 1. The submit button for the form
                 2. A button that allows the user to cancel without adding an item
             -->
             <div class="actions">
                 <input type="submit" value="Add/Update item" class="btn btn-primary">
-                <a href=""""),_display_(/*42.27*/routes/*42.33*/.HomeController.onsale(0)),format.raw/*42.58*/("""">
+                <a href=""""),_display_(/*41.27*/routes/*41.33*/.HomeController.onsale(0)),format.raw/*41.58*/("""">
                     <button type="button" class="btn btn-warning">Cancel</button>
                 </a>
             </div>
-    """)))}),format.raw/*46.6*/(""" """),format.raw/*46.24*/("""
-""")))}),format.raw/*47.2*/(""" """))
+    """)))}),format.raw/*45.6*/(""" """),format.raw/*45.24*/("""
+""")))}),format.raw/*46.2*/(""" """))
       }
     }
   }
 
-  def render(itemForm:Form[models.ItemOnSale],user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(itemForm,user)
+  def render(itemForm:Form[models.products.ItemOnSale],user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(itemForm,user)
 
-  def f:((Form[models.ItemOnSale],models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (itemForm,user) => apply(itemForm,user)
+  def f:((Form[models.products.ItemOnSale],models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (itemForm,user) => apply(itemForm,user)
 
   def ref: this.type = this
 
@@ -91,11 +90,11 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Mar 08 12:09:07 GMT 2019
+                  DATE: Sun Mar 17 21:34:06 GMT 2019
                   SOURCE: /home/wdd/year2Project/projectCarRental/app/views/addItem.scala.html
-                  HASH: 068f0f85904a7baedd437cee07be9163bb1492d7
-                  MATRIX: 985->1|1117->63|1161->61|1188->79|1215->81|1244->102|1282->103|1313->108|1632->401|1738->497|1779->499|1816->536|1853->635|1890->645|1903->649|1934->659|1971->669|2345->1016|2372->1022|2401->1023|2653->1248|2746->1320|2787->1334|3062->1588|3103->1602|3211->1688|3252->1702|3347->1776|3388->1790|3483->1864|3525->1879|3607->1940|3661->1966|4053->2331|4068->2337|4114->2362|4274->2492|4303->2510|4335->2512
-                  LINES: 28->1|31->3|34->2|35->4|36->5|36->5|36->5|37->6|42->11|42->11|42->11|43->12|44->13|45->14|45->14|45->14|47->16|51->20|51->20|51->20|54->23|54->23|55->24|60->29|61->30|61->30|62->31|62->31|63->32|63->32|65->34|65->34|67->36|73->42|73->42|73->42|77->46|77->46|78->47
+                  HASH: e4afbe3353f3bc16ffdb5aed5bab65e985afd0f5
+                  MATRIX: 994->1|1135->72|1179->70|1206->88|1233->90|1262->111|1300->112|1331->117|1650->410|1756->506|1797->508|1834->545|1871->644|1908->654|1921->658|1952->668|2003->692|2096->764|2137->777|2212->825|2275->872|2315->874|2360->891|2437->941|2463->946|2515->971|2598->1045|2638->1047|2692->1074|2784->1156|2825->1158|2882->1187|2946->1220|2999->1242|3045->1260|3076->1264|3101->1268|3130->1269|3180->1288|3221->1301|3266->1319|3374->1405|3415->1419|3510->1493|3551->1507|3646->1581|3688->1596|3770->1657|3824->1683|4216->2048|4231->2054|4277->2079|4437->2209|4466->2227|4498->2229
+                  LINES: 28->1|31->3|34->2|35->4|36->5|36->5|36->5|37->6|42->11|42->11|42->11|43->12|44->13|45->14|45->14|45->14|48->17|48->17|49->18|50->19|50->19|50->19|51->20|51->20|51->20|52->21|52->21|52->21|53->22|53->22|53->22|54->23|55->24|56->25|57->26|57->26|57->26|57->26|58->27|59->28|60->29|60->29|61->30|61->30|62->31|62->31|64->33|64->33|66->35|72->41|72->41|72->41|76->45|76->45|77->46
                   -- GENERATED --
               */
           
