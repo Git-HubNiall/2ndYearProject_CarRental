@@ -59,14 +59,13 @@ public class HomeController extends Controller {
         Form<ItemOnSale> itemForm = formFactory.form(ItemOnSale.class);
         return ok(addItem.render(itemForm,User.getUserById(session().get("email"))));
 }
+
 @Security.Authenticated(Secured.class)
 @Transactional
 public Result addItemSubmit() {
-
     Form<ItemOnSale> newItemForm = formFactory.form(ItemOnSale.class).bindFromRequest();
 
     if (newItemForm.hasErrors()) {
-
         return badRequest(addItem.render(newItemForm,User.getUserById(session().get("email"))));
     } else {
         ItemOnSale newItem = newItemForm.get();
@@ -83,10 +82,10 @@ public Result addItemSubmit() {
             newItem.update();
         }
         flash("success", "Item " + newItem.getName() + " was added/updated.");
-
         return redirect(controllers.routes.HomeController.onsale(0));
     }
 }
+
 @Security.Authenticated(Secured.class)
 @Transactional
 @With(AuthAdmin.class)
