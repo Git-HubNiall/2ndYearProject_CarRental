@@ -22,3 +22,10 @@ clean
 compile
 run
 exit
+run
+h2-browser
+run
+clean
+compile
+run
+exit

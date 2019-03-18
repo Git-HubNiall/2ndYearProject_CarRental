@@ -1,2 +1,4 @@
-[0m[[0m[0minfo[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/models/products/Category.java: /home/wdd/year2Project/projectCarRental/app/models/products/Category.java uses unchecked or unsafe operations.[0m
-[0m[[0m[0minfo[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/models/products/Category.java: Recompile with -Xlint:unchecked for details.[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/HomeController.java:26:8: object imgscalr is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.imgscalr.*;[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
