@@ -33,8 +33,11 @@ public class HomeController extends Controller {
 
     private FormFactory formFactory;
 
+    private Environment e;
+
     @Inject
-    public HomeController(FormFactory f) {
+    public HomeController(FormFactory f, Environment env) {
+        this.e = env;
         this.formFactory = f;
 }
     /**
@@ -52,7 +55,7 @@ public class HomeController extends Controller {
         }else {
             itemList = Category.find.ref(cat).getItems();
         }
-        return ok(onsale.render(itemList, categoryList,User.getUserById(session().get("email"))));
+        return ok(onsale.render(itemList, categoryList,User.getUserById(session().get("email")),e));
 
      }
 

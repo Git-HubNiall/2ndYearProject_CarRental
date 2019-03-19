@@ -22,34 +22,36 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object onsale extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[List[models.products.ItemOnSale],List[models.products.Category],models.users.User,play.twirl.api.HtmlFormat.Appendable] {
+object onsale extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template4[List[models.products.ItemOnSale],List[models.products.Category],models.users.User,play.api.Environment,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(items: List[models.products.ItemOnSale],categories: List[models.products.Category],user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(items: List[models.products.ItemOnSale],categories: List[models.products.Category],
+user: models.users.User,env: play.api.Environment):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](_display_(/*2.2*/main("On Sale",user)/*2.22*/{_display_(Seq[Any](format.raw/*2.23*/("""
-    """),format.raw/*3.5*/("""<h1>For Rent Here</h1>
+Seq[Any](format.raw/*3.1*/("""
+"""),_display_(/*4.2*/main("On Sale",user)/*4.22*/{_display_(Seq[Any](format.raw/*4.23*/("""
+    """),format.raw/*5.5*/("""<h1>For Rent Here</h1>
 
 
-    """),format.raw/*6.74*/("""
-	"""),_display_(/*7.3*/if(flash.containsKey("success"))/*7.35*/ {_display_(Seq[Any](format.raw/*7.37*/("""
-		"""),format.raw/*8.3*/("""<div class="alert alert-success">
-			"""),_display_(/*9.5*/flash/*9.10*/.get("success")),format.raw/*9.25*/("""
-		"""),format.raw/*10.3*/("""</div>
-""")))}),format.raw/*11.2*/("""
-    """),format.raw/*12.5*/("""<div class="col-sm-3">
+    """),format.raw/*8.74*/("""
+	"""),_display_(/*9.3*/if(flash.containsKey("success"))/*9.35*/ {_display_(Seq[Any](format.raw/*9.37*/("""
+		"""),format.raw/*10.3*/("""<div class="alert alert-success">
+			"""),_display_(/*11.5*/flash/*11.10*/.get("success")),format.raw/*11.25*/("""
+		"""),format.raw/*12.3*/("""</div>
+""")))}),format.raw/*13.2*/("""
+    """),format.raw/*14.5*/("""<div class="col-sm-3">
 		<h4>Categories</h4>
 	        <ul class="list-group">
-                    <a href = """"),_display_(/*15.33*/routes/*15.39*/.HomeController.onsale(0)),format.raw/*15.64*/("""" class="list-group-item">All Categories</a>
-		        """),_display_(/*16.12*/for(c<-categories) yield /*16.30*/ {_display_(Seq[Any](format.raw/*16.32*/("""
-			        """),format.raw/*17.12*/("""<a href = """"),_display_(/*17.24*/routes/*17.30*/.HomeController.onsale(c.getId())),format.raw/*17.63*/("""" class="list-group-item catheight">"""),_display_(/*17.100*/c/*17.101*/.getName),format.raw/*17.109*/("""
-                        """),format.raw/*18.25*/("""<span class="badge">"""),_display_(/*18.46*/c/*18.47*/.getItems.size),format.raw/*18.61*/("""</span> 
+                    <a href = """"),_display_(/*17.33*/routes/*17.39*/.HomeController.onsale(0)),format.raw/*17.64*/("""" class="list-group-item">All Categories</a>
+		        """),_display_(/*18.12*/for(c<-categories) yield /*18.30*/ {_display_(Seq[Any](format.raw/*18.32*/("""
+			        """),format.raw/*19.12*/("""<a href = """"),_display_(/*19.24*/routes/*19.30*/.HomeController.onsale(c.getId())),format.raw/*19.63*/("""" class="list-group-item catheight">"""),_display_(/*19.100*/c/*19.101*/.getName),format.raw/*19.109*/("""
+                        """),format.raw/*20.25*/("""<span class="badge">"""),_display_(/*20.46*/c/*20.47*/.getItems.size),format.raw/*20.61*/("""</span> 
                     </a>
-			    """)))}),format.raw/*20.9*/("""
-            """),format.raw/*21.13*/("""</ul>
+			    """)))}),format.raw/*22.9*/("""
+            """),format.raw/*23.13*/("""</ul>
     </div>
 
     <div class="col-sm-9">
@@ -58,6 +60,7 @@ Seq[Any](_display_(/*2.2*/main("On Sale",user)/*2.22*/{_display_(Seq[Any](format
             <thead>
         <!-- The header row-->
         <tr>
+            <th>Image</th>
             <th>ID</th>
             <th>Name</th>
             <th>Description</th>
@@ -68,50 +71,55 @@ Seq[Any](_display_(/*2.2*/main("On Sale",user)/*2.22*/{_display_(Seq[Any](format
         <tbody>
         <!-- Product row(s) -->
        
-            """),format.raw/*40.68*/("""
-            """),_display_(/*41.14*/for(i<-items) yield /*41.27*/ {_display_(Seq[Any](format.raw/*41.29*/("""
-               """),format.raw/*42.16*/("""<tr>
-                  <td>"""),_display_(/*43.24*/i/*43.25*/.getId),format.raw/*43.31*/("""</td>
-                  <td>"""),_display_(/*44.24*/i/*44.25*/.getName),format.raw/*44.33*/("""</td>
-                  <td>"""),_display_(/*45.24*/i/*45.25*/.getDescription),format.raw/*45.40*/("""</td>
-                  <td>"""),_display_(/*46.24*/i/*46.25*/.getStock),format.raw/*46.34*/("""</td>
-                  <td>&euro; """),_display_(/*47.31*/("%.2f".format(i.getPrice))),format.raw/*47.58*/("""</td>
+            """),format.raw/*43.68*/("""
+            """),_display_(/*44.14*/for(i<-items) yield /*44.27*/ {_display_(Seq[Any](format.raw/*44.29*/("""
+               """),format.raw/*45.16*/("""<tr>
+                    """),_display_(/*46.22*/if(env.resource("public/images/productImages/" + i.getId + "thumb.jpg").isDefined)/*46.104*/ {_display_(Seq[Any](format.raw/*46.106*/("""
+                        """),format.raw/*47.25*/("""<td><img src="/assets/images/productImages/"""),_display_(/*47.69*/(i.getId + "thumb.jpg")),format.raw/*47.92*/(""""/></td>
+                    """)))}/*48.23*/else/*48.28*/{_display_(Seq[Any](format.raw/*48.29*/("""
+                        """),format.raw/*49.25*/("""<td><img src="/assets/images/productImages/noImage.jpg"/></td>
+                    """)))}),format.raw/*50.22*/("""
+                  """),format.raw/*51.19*/("""<td>"""),_display_(/*51.24*/i/*51.25*/.getId),format.raw/*51.31*/("""</td>
+                  <td>"""),_display_(/*52.24*/i/*52.25*/.getName),format.raw/*52.33*/("""</td>
+                  <td>"""),_display_(/*53.24*/i/*53.25*/.getDescription),format.raw/*53.40*/("""</td>
+                  <td>"""),_display_(/*54.24*/i/*54.25*/.getStock),format.raw/*54.34*/("""</td>
+                  <td>&euro; """),_display_(/*55.31*/("%.2f".format(i.getPrice))),format.raw/*55.58*/("""</td>
 
-                  """),_display_(/*49.20*/if((user != null) && ("admin".equals(user.getRole())))/*49.74*/ {_display_(Seq[Any](format.raw/*49.76*/("""
-                  """),format.raw/*50.19*/("""<!-- Update button -->
+                  """),_display_(/*57.20*/if((user != null) && ("admin".equals(user.getRole())))/*57.74*/ {_display_(Seq[Any](format.raw/*57.76*/("""
+                  """),format.raw/*58.19*/("""<!-- Update button -->
 						<td>
-							<a href=""""),_display_(/*52.18*/routes/*52.24*/.HomeController.updateItem(i.getId)),format.raw/*52.59*/("""" class="button-xs btn-danger">
+							<a href=""""),_display_(/*60.18*/routes/*60.24*/.HomeController.updateItem(i.getId)),format.raw/*60.59*/("""" class="button-xs btn-danger">
 								<span class="glyphicon glyphicon-pencil"></span>
 							</a>
                         </td>
                   <!-- Delete button -->
 						<td>
-							<a href=""""),_display_(/*58.18*/routes/*58.24*/.HomeController.deleteItem(i.getId)),format.raw/*58.59*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
+							<a href=""""),_display_(/*66.18*/routes/*66.24*/.HomeController.deleteItem(i.getId)),format.raw/*66.59*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
 								<span class="glyphicon glyphicon-trash"></span>
 							</a>
                         </td>
-                  """)))}),format.raw/*62.20*/("""
-               """),format.raw/*63.16*/("""</tr>
-            """)))}),format.raw/*64.14*/("""
+                  """)))}),format.raw/*70.20*/("""
+               """),format.raw/*71.16*/("""</tr>
+            """)))}),format.raw/*72.14*/("""
         
-        """),format.raw/*66.9*/("""</tbody>
+        """),format.raw/*74.9*/("""</tbody>
     </table>
-    """),_display_(/*68.6*/if((user != null) && ("admin".equals(user.getRole())))/*68.60*/ {_display_(Seq[Any](format.raw/*68.62*/("""
-    """),format.raw/*69.5*/("""<p>
-        <a href=""""),_display_(/*70.19*/routes/*70.25*/.HomeController.addItem()),format.raw/*70.50*/("""">
+    """),_display_(/*76.6*/if((user != null) && ("admin".equals(user.getRole())))/*76.60*/ {_display_(Seq[Any](format.raw/*76.62*/("""
+    """),format.raw/*77.5*/("""<p>
+        <a href=""""),_display_(/*78.19*/routes/*78.25*/.HomeController.addItem()),format.raw/*78.50*/("""">
             <button class="btn btn-primary">Add an item</button>
         </a>
     </p>
-    """)))}),format.raw/*74.6*/("""
-"""),format.raw/*75.1*/("""</div>
+    """)))}),format.raw/*82.6*/("""
+"""),format.raw/*83.1*/("""</div>
  """)))}))
       }
     }
   }
 
-  def render(items:List[models.products.ItemOnSale],categories:List[models.products.Category],user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(items,categories,user)
+  def render(items:List[models.products.ItemOnSale],categories:List[models.products.Category],user:models.users.User,env:play.api.Environment): play.twirl.api.HtmlFormat.Appendable = apply(items,categories,user,env)
 
-  def f:((List[models.products.ItemOnSale],List[models.products.Category],models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (items,categories,user) => apply(items,categories,user)
+  def f:((List[models.products.ItemOnSale],List[models.products.Category],models.users.User,play.api.Environment) => play.twirl.api.HtmlFormat.Appendable) = (items,categories,user,env) => apply(items,categories,user,env)
 
   def ref: this.type = this
 
@@ -120,11 +128,11 @@ Seq[Any](_display_(/*2.2*/main("On Sale",user)/*2.22*/{_display_(Seq[Any](format
 
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 18 16:57:20 GMT 2019
+                  DATE: Tue Mar 19 09:54:00 GMT 2019
                   SOURCE: /home/wdd/year2Project/projectCarRental/app/views/onsale.scala.html
-                  HASH: ea9413bdcd454806a54fb026d8723e0abb288309
-                  MATRIX: 1024->1|1226->111|1254->131|1292->132|1323->137|1379->235|1407->238|1447->270|1486->272|1515->275|1578->313|1591->318|1626->333|1656->336|1694->344|1726->349|1863->459|1878->465|1924->490|2007->546|2041->564|2081->566|2121->578|2160->590|2175->596|2229->629|2294->666|2305->667|2335->675|2388->700|2436->721|2446->722|2481->736|2553->778|2594->791|3049->1273|3090->1287|3119->1300|3159->1302|3203->1318|3258->1346|3268->1347|3295->1353|3351->1382|3361->1383|3390->1391|3446->1420|3456->1421|3492->1436|3548->1465|3558->1466|3588->1475|3651->1511|3699->1538|3752->1564|3815->1618|3855->1620|3902->1639|3980->1690|3995->1696|4051->1731|4278->1931|4293->1937|4349->1972|4560->2152|4604->2168|4654->2187|4699->2205|4752->2232|4815->2286|4855->2288|4887->2293|4936->2315|4951->2321|4997->2346|5122->2441|5150->2442
-                  LINES: 28->1|33->2|33->2|33->2|34->3|37->6|38->7|38->7|38->7|39->8|40->9|40->9|40->9|41->10|42->11|43->12|46->15|46->15|46->15|47->16|47->16|47->16|48->17|48->17|48->17|48->17|48->17|48->17|48->17|49->18|49->18|49->18|49->18|51->20|52->21|71->40|72->41|72->41|72->41|73->42|74->43|74->43|74->43|75->44|75->44|75->44|76->45|76->45|76->45|77->46|77->46|77->46|78->47|78->47|80->49|80->49|80->49|81->50|83->52|83->52|83->52|89->58|89->58|89->58|93->62|94->63|95->64|97->66|99->68|99->68|99->68|100->69|101->70|101->70|101->70|105->74|106->75
+                  HASH: 50b588c166797065c8fcbb92b03b1156c957222e
+                  MATRIX: 1045->1|1274->137|1301->139|1329->159|1367->160|1398->165|1454->263|1482->266|1522->298|1561->300|1591->303|1655->341|1669->346|1705->361|1735->364|1773->372|1805->377|1942->487|1957->493|2003->518|2086->574|2120->592|2160->594|2200->606|2239->618|2254->624|2308->657|2373->694|2384->695|2414->703|2467->728|2515->749|2525->750|2560->764|2632->806|2673->819|3155->1328|3196->1342|3225->1355|3265->1357|3309->1373|3362->1399|3454->1481|3495->1483|3548->1508|3619->1552|3663->1575|3712->1606|3725->1611|3764->1612|3817->1637|3932->1721|3979->1740|4011->1745|4021->1746|4048->1752|4104->1781|4114->1782|4143->1790|4199->1819|4209->1820|4245->1835|4301->1864|4311->1865|4341->1874|4404->1910|4452->1937|4505->1963|4568->2017|4608->2019|4655->2038|4733->2089|4748->2095|4804->2130|5031->2330|5046->2336|5102->2371|5313->2551|5357->2567|5407->2586|5452->2604|5505->2631|5568->2685|5608->2687|5640->2692|5689->2714|5704->2720|5750->2745|5875->2840|5903->2841
+                  LINES: 28->1|34->3|35->4|35->4|35->4|36->5|39->8|40->9|40->9|40->9|41->10|42->11|42->11|42->11|43->12|44->13|45->14|48->17|48->17|48->17|49->18|49->18|49->18|50->19|50->19|50->19|50->19|50->19|50->19|50->19|51->20|51->20|51->20|51->20|53->22|54->23|74->43|75->44|75->44|75->44|76->45|77->46|77->46|77->46|78->47|78->47|78->47|79->48|79->48|79->48|80->49|81->50|82->51|82->51|82->51|82->51|83->52|83->52|83->52|84->53|84->53|84->53|85->54|85->54|85->54|86->55|86->55|88->57|88->57|88->57|89->58|91->60|91->60|91->60|97->66|97->66|97->66|101->70|102->71|103->72|105->74|107->76|107->76|107->76|108->77|109->78|109->78|109->78|113->82|114->83
                   -- GENERATED --
               */
           
