@@ -1,78 +1,17 @@
-2019-03-19 10:22:26,468 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-4 - Database [default] initialized at jdbc:h2:file:./data/productsDB
-2019-03-19 10:22:26,475 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2019-03-19 10:22:28,429 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2019-03-19T10:22:28.428Z
-2019-03-19 10:22:28,978 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-4 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-19 10:22:29,488 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-03-19 14:18:44,364 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-5 - Database [default] initialized at jdbc:h2:file:./data/productsDB
+2019-03-19 14:18:44,405 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2019-03-19 14:18:45,996 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-5 - ApplicationTimer demo: Starting application at 2019-03-19T14:18:45.995Z
+2019-03-19 14:18:46,522 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-5 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2019-03-19 14:18:46,798 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-5 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     filters.ExampleFilter
 
-2019-03-19 10:22:29,500 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev)
-2019-03-19 10:22:49,865 [WARN] from application in application-akka.actor.default-dispatcher-2 - The "validate" method in class "models.users.Login" is deprecated since Play 2.6. To migrate to class-level constraints see https://www.playframework.com/documentation/2.6.x/Migration26#java-form-changes and https://www.playframework.com/documentation/2.6.x/JavaForms#Advanced-validation
-2019-03-19 10:24:50,966 [WARN] from application in application-akka.actor.default-dispatcher-10 - The "validate" method in class "models.users.Login" is deprecated since Play 2.6. To migrate to class-level constraints see https://www.playframework.com/documentation/2.6.x/Migration26#java-form-changes and https://www.playframework.com/documentation/2.6.x/JavaForms#Advanced-validation
-2019-03-19 10:25:52,472 [WARN] from application in application-akka.actor.default-dispatcher-17 - The "validate" method in class "models.users.Login" is deprecated since Play 2.6. To migrate to class-level constraints see https://www.playframework.com/documentation/2.6.x/Migration26#java-form-changes and https://www.playframework.com/documentation/2.6.x/JavaForms#Advanced-validation
-2019-03-19 10:26:24,292 [WARN] from application in application-akka.actor.default-dispatcher-16 - The "validate" method in class "models.users.Login" is deprecated since Play 2.6. To migrate to class-level constraints see https://www.playframework.com/documentation/2.6.x/Migration26#java-form-changes and https://www.playframework.com/documentation/2.6.x/JavaForms#Advanced-validation
-2019-03-19 10:26:43,043 [WARN] from application in application-akka.actor.default-dispatcher-20 - The "validate" method in class "models.users.Login" is deprecated since Play 2.6. To migrate to class-level constraints see https://www.playframework.com/documentation/2.6.x/Migration26#java-form-changes and https://www.playframework.com/documentation/2.6.x/JavaForms#Advanced-validation
-2019-03-19 10:27:36,363 [WARN] from application in application-akka.actor.default-dispatcher-21 - The "validate" method in class "models.users.Login" is deprecated since Play 2.6. To migrate to class-level constraints see https://www.playframework.com/documentation/2.6.x/Migration26#java-form-changes and https://www.playframework.com/documentation/2.6.x/JavaForms#Advanced-validation
-2019-03-19 10:27:57,294 [WARN] from application in application-akka.actor.default-dispatcher-22 - The "validate" method in class "models.users.Login" is deprecated since Play 2.6. To migrate to class-level constraints see https://www.playframework.com/documentation/2.6.x/Migration26#java-form-changes and https://www.playframework.com/documentation/2.6.x/JavaForms#Advanced-validation
-2019-03-19 10:34:14,863 [INFO] from application in application-akka.actor.default-dispatcher-37 - ApplicationTimer demo: Stopping application at 2019-03-19T10:34:14.863Z after 706s.
-2019-03-19 10:34:14,866 [INFO] from application in application-akka.actor.default-dispatcher-37 - Shutting down connection pool.
-2019-03-19 10:34:15,419 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-17 - Database [default] initialized at jdbc:h2:file:./data/productsDB
-2019-03-19 10:34:15,420 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-17 - Creating Pool for datasource 'default'
-2019-03-19 10:34:15,632 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-17 - ApplicationTimer demo: Starting application at 2019-03-19T10:34:15.632Z
-2019-03-19 10:34:15,670 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-17 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-19 10:34:15,813 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-17 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    filters.ExampleFilter
-
-2019-03-19 10:34:15,816 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-17 - Application started (Dev)
-2019-03-19 10:35:21,075 [INFO] from application in application-akka.actor.default-dispatcher-10 - ApplicationTimer demo: Stopping application at 2019-03-19T10:35:21.075Z after 66s.
-2019-03-19 10:35:21,075 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
-2019-03-19 10:35:21,673 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-21 - Database [default] initialized at jdbc:h2:file:./data/productsDB
-2019-03-19 10:35:21,676 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-21 - Creating Pool for datasource 'default'
-2019-03-19 10:35:21,852 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-21 - ApplicationTimer demo: Starting application at 2019-03-19T10:35:21.852Z
-2019-03-19 10:35:21,895 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-21 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-19 10:35:22,058 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-21 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    filters.ExampleFilter
-
-2019-03-19 10:35:22,061 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-21 - Application started (Dev)
-2019-03-19 10:36:03,220 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2019-03-19T10:36:03.220Z after 42s.
-2019-03-19 10:36:03,222 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2019-03-19 10:36:03,763 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-18 - Database [default] initialized at jdbc:h2:file:./data/productsDB
-2019-03-19 10:36:03,765 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-18 - Creating Pool for datasource 'default'
-2019-03-19 10:36:03,983 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-18 - ApplicationTimer demo: Starting application at 2019-03-19T10:36:03.983Z
-2019-03-19 10:36:04,011 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-18 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-19 10:36:04,149 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-18 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    filters.ExampleFilter
-
-2019-03-19 10:36:04,149 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-18 - Application started (Dev)
-2019-03-19 10:36:34,922 [INFO] from application in application-akka.actor.default-dispatcher-10 - ApplicationTimer demo: Stopping application at 2019-03-19T10:36:34.922Z after 31s.
-2019-03-19 10:36:34,922 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
-2019-03-19 10:36:35,337 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-17 - Database [default] initialized at jdbc:h2:file:./data/productsDB
-2019-03-19 10:36:35,344 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-17 - Creating Pool for datasource 'default'
-2019-03-19 10:36:35,499 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-17 - ApplicationTimer demo: Starting application at 2019-03-19T10:36:35.499Z
-2019-03-19 10:36:35,530 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-17 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-19 10:36:35,644 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-17 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    filters.ExampleFilter
-
-2019-03-19 10:36:35,647 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-17 - Application started (Dev)
-2019-03-19 10:36:48,497 [INFO] from play.core.server.AkkaHttpServer in pool-5-thread-1 - Stopping server...
-2019-03-19 10:36:48,534 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Stopping application at 2019-03-19T10:36:48.534Z after 13s.
-2019-03-19 10:36:48,534 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2019-03-19 14:18:46,808 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-5 - Application started (Dev)
+2019-03-19 14:22:57,861 [WARN] from application in application-akka.actor.default-dispatcher-12 - The "validate" method in class "models.users.Login" is deprecated since Play 2.6. To migrate to class-level constraints see https://www.playframework.com/documentation/2.6.x/Migration26#java-form-changes and https://www.playframework.com/documentation/2.6.x/JavaForms#Advanced-validation
+2019-03-19 14:23:06,478 [WARN] from application in application-akka.actor.default-dispatcher-12 - The "validate" method in class "models.users.Login" is deprecated since Play 2.6. To migrate to class-level constraints see https://www.playframework.com/documentation/2.6.x/Migration26#java-form-changes and https://www.playframework.com/documentation/2.6.x/JavaForms#Advanced-validation
+2019-03-19 14:34:37,833 [INFO] from play.core.server.AkkaHttpServer in pool-6-thread-3 - Stopping server...
+2019-03-19 14:34:37,944 [INFO] from application in application-akka.actor.default-dispatcher-67 - ApplicationTimer demo: Stopping application at 2019-03-19T14:34:37.944Z after 952s.
+2019-03-19 14:34:37,946 [INFO] from application in application-akka.actor.default-dispatcher-67 - Shutting down connection pool.
