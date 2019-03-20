@@ -36,3 +36,6 @@ EXIT
 exit
 run
 exit
+clean
+compile
+exit

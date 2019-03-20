@@ -7,6 +7,8 @@ import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 
+import models.shopping.*;
+
 
 
 @Table(name = "user")
@@ -26,6 +28,13 @@ public class Customer extends User{
     private String postCode;
     @Constraints.Required
     private String creditCard;
+
+    @OneToOne(mappedBy="customer", cascade = CascadeType.ALL)
+    private Basket basket;
+
+    
+    @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)
+    private List<ShopOrder> orders;
     
 
     public Customer(){
@@ -86,4 +95,20 @@ public class Customer extends User{
     public static final List<Customer> findAll() {
        return Customer.find.all();
     }
+
+    public Basket getBasket() {
+        return basket;
+    }
+
+    public void setBasket(Basket basket) {
+        this.basket = basket;
+    }
+
+    public List<ShopOrder> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<ShopOrder> orders) {
+        this.orders = orders;
+}
 }
