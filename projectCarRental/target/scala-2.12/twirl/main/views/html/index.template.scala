@@ -76,7 +76,7 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Mar 20 14:42:12 GMT 2019
+                  DATE: Wed Mar 20 15:38:28 GMT 2019
                   SOURCE: /home/wdd/year2Project/projectCarRental/app/views/index.scala.html
                   HASH: 661279daa8457d95a570261f515befd681b93869
                   MATRIX: 959->1|1079->26|1107->29|1132->46|1170->47|1198->49|2077->901|2092->907|2153->947|2243->1007

@@ -26,7 +26,7 @@
 				<th>Description</th>
 				<th>Item Price</th>
 				<th>Total</th>
-				<th>Quantity</th>
+				<th>Number of Days</th>
                 <th>dec.</th>
                 <th>inc.</th>
 			</tr>
@@ -41,8 +41,8 @@
                         <td>&euro; @("%.2f".format(i.getPrice))</td>
                         <td>&euro; @("%.2f".format(i.getItemTotal))</td>
                         <td>@i.getQuantity()</td>
-                        <td><a href="@routes.ShoppingCtrl.removeOne(i.getId)"><span class="glyphicon glyphicon-minus-sign"></span></a></td>
-                        <td><a href="@routes.ShoppingCtrl.addOne(i.getId)"><span class="glyphicon glyphicon-plus-sign"></span></a></td>
+                        <td><a href="@routes.ShoppingCtrl.removeOne(i.getId,i.getItem.getId())"><span class="glyphicon glyphicon-minus-sign"></span></a></td>
+                        <td><a href="@routes.ShoppingCtrl.addOne(i.getId,i.getItem.getId())"><span class="glyphicon glyphicon-plus-sign"></span></a></td>
                     </tr>
                     }<!-- End of For loop -->
               }

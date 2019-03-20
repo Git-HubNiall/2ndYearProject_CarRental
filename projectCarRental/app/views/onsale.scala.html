@@ -70,11 +70,16 @@ user: models.users.User,env: play.api.Environment)
                         </td>
                     }
                     @if((user != null) && ("customer".equals(user.getRole()))) {
+                        @if(i.getStock() > 0){
                         <td><a href="@routes.ShoppingCtrl.addToBasket(i.getId)" 
                              class="btn btn-default btn-xs"><span 
                             class="glyphicon glyphicon-shopping-cart"></span></a>
                         </td>
+                    }else{
+                         <td><img src="/assets/images/oos.jpg"/></td>
+
                     }
+                }
                </tr>
             }
         

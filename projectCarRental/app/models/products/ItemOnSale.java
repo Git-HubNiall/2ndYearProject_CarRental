@@ -84,6 +84,17 @@ public void setCategories(List <Category> categories) {
     this.categories = categories;
 }
 
+public void decrementStock(){
+    stock -=1;
+ }
+ 
+ public void incrementStock(){
+     stock +=1;
+ }
+ public void incrementStock(int q){
+     stock +=q;
+ }
+
 public List<Long> getCatSelect() {
     return catSelect;
 }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/year2Project/projectCarRental/conf/routes
-// @DATE:Wed Mar 20 14:42:08 GMT 2019
+// @DATE:Wed Mar 20 15:38:28 GMT 2019
 
 package router
 
@@ -79,8 +79,8 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """registerUserSubmit""", """controllers.LoginController.registerUserSubmit()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """showBasket""", """controllers.ShoppingCtrl.showBasket()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addToBasket/""" + "$" + """id<[^/]+>""", """controllers.ShoppingCtrl.addToBasket(id:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addOne/""" + "$" + """itemId<[^/]+>""", """controllers.ShoppingCtrl.addOne(itemId:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """removeOne/""" + "$" + """itemId<[^/]+>""", """controllers.ShoppingCtrl.removeOne(itemId:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addOne/""" + "$" + """itemId<[^/]+>""", """controllers.ShoppingCtrl.addOne(itemId:Long, pid:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """removeOne/""" + "$" + """itemId<[^/]+>""", """controllers.ShoppingCtrl.removeOne(itemId:Long, pid:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """emptyBasket""", """controllers.ShoppingCtrl.emptyBasket()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """placeOrder""", """controllers.ShoppingCtrl.placeOrder()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """viewOrder/""" + "$" + """id<[^/]+>""", """controllers.ShoppingCtrl.viewOrder(id:Long)"""),
@@ -531,12 +531,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addOne/"), DynamicPart("itemId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_ShoppingCtrl_addOne24_invoker = createInvoker(
-    ShoppingCtrl_3.addOne(fakeValue[Long]),
+    ShoppingCtrl_3.addOne(fakeValue[Long], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ShoppingCtrl",
       "addOne",
-      Seq(classOf[Long]),
+      Seq(classOf[Long], classOf[Long]),
       "GET",
       this.prefix + """addOne/""" + "$" + """itemId<[^/]+>""",
       """""",
@@ -549,12 +549,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("removeOne/"), DynamicPart("itemId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_ShoppingCtrl_removeOne25_invoker = createInvoker(
-    ShoppingCtrl_3.removeOne(fakeValue[Long]),
+    ShoppingCtrl_3.removeOne(fakeValue[Long], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ShoppingCtrl",
       "removeOne",
-      Seq(classOf[Long]),
+      Seq(classOf[Long], classOf[Long]),
       "GET",
       this.prefix + """removeOne/""" + "$" + """itemId<[^/]+>""",
       """""",
@@ -819,14 +819,14 @@ class Routes(
   
     // @LINE:45
     case controllers_ShoppingCtrl_addOne24_route(params@_) =>
-      call(params.fromPath[Long]("itemId", None)) { (itemId) =>
-        controllers_ShoppingCtrl_addOne24_invoker.call(ShoppingCtrl_3.addOne(itemId))
+      call(params.fromPath[Long]("itemId", None), params.fromQuery[Long]("pid", None)) { (itemId, pid) =>
+        controllers_ShoppingCtrl_addOne24_invoker.call(ShoppingCtrl_3.addOne(itemId, pid))
       }
   
     // @LINE:46
     case controllers_ShoppingCtrl_removeOne25_route(params@_) =>
-      call(params.fromPath[Long]("itemId", None)) { (itemId) =>
-        controllers_ShoppingCtrl_removeOne25_invoker.call(ShoppingCtrl_3.removeOne(itemId))
+      call(params.fromPath[Long]("itemId", None), params.fromQuery[Long]("pid", None)) { (itemId, pid) =>
+        controllers_ShoppingCtrl_removeOne25_invoker.call(ShoppingCtrl_3.removeOne(itemId, pid))
       }
   
     // @LINE:47
