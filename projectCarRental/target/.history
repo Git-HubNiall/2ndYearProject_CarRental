@@ -47,3 +47,5 @@ compile
 clean
 compile
 run
+git add *
+exit

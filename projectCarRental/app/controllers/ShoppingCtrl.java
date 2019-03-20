@@ -13,6 +13,10 @@ import models.users.*;
 import models.products.*;
 import models.shopping.*;
 
+import java.text.SimpleDateFormat;
+
+import java.util.Calendar;
+
 // Import security controllers
 // import controllers.security.*;
 
@@ -38,6 +42,8 @@ public class ShoppingCtrl extends Controller {
         this.env = e;
         this.formFactory = f;
     }
+
+    
 
     @Transactional
     public Result showBasket() {
@@ -117,6 +123,11 @@ public class ShoppingCtrl extends Controller {
         return ok(basket.render(c));
     }
 
+    @Transactional
+    public Result viewOrders() {       
+        return ok(viewOrders.render((Customer)User.getUserById(session().get("email"))));
+    }
+
     // Empty Basket
     @Transactional
     public Result emptyBasket() {
@@ -170,6 +181,39 @@ public class ShoppingCtrl extends Controller {
     public Result viewOrder(long id) {
         ShopOrder order = ShopOrder.find.byId(id);
         return ok(orderConfirmed.render((Customer)User.getUserById(session().get("email")), order));
+    }
+
+    @Transactional
+    public Result cancelOrder(Long orderId){
+        ShopOrder order = ShopOrder.find.byId(orderId);
+        Calendar c1 = Calendar.getInstance();
+        Calendar c2 = Calendar.getInstance();
+        
+        c1=order.getOrderDate();
+        if(compareDates(c1,c2)){
+           // order.removeAllItems(orderId);
+           order.adjustStock();
+           order.delete();
+           
+            flash("success", "Your order has been cancelled");
+        }else {
+            flash("success", "Sorry, it is too late to cancel this order");
+        }
+        return ok(viewOrders.render((Customer)User.getUserById(session().get("email"))));
+    }
+
+    public boolean compareDates(Calendar c1, Calendar c2){
+        boolean allowed = true;
+        long miliSecondForDate1 = c1.getTimeInMillis();
+        long miliSecondForDate2 = c2.getTimeInMillis();
+        // Calculate the difference in millisecond between two dates
+        long diffInMilis = miliSecondForDate2 - miliSecondForDate1;
+
+        long diffInMinutes = diffInMilis / (60 * 1000);
+        if(diffInMinutes >60){
+            allowed=false;
+        }
+        return allowed;
     }
 
 }

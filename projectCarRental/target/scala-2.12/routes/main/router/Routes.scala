@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/year2Project/projectCarRental/conf/routes
-// @DATE:Wed Mar 20 15:38:28 GMT 2019
+// @DATE:Wed Mar 20 22:00:40 GMT 2019
 
 package router
 
@@ -20,11 +20,11 @@ class Routes(
   LoginController_5: controllers.LoginController,
   // @LINE:43
   ShoppingCtrl_3: controllers.ShoppingCtrl,
-  // @LINE:52
-  CountController_0: controllers.CountController,
   // @LINE:54
+  CountController_0: controllers.CountController,
+  // @LINE:56
   AsyncController_2: controllers.AsyncController,
-  // @LINE:57
+  // @LINE:59
   Assets_4: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -37,11 +37,11 @@ class Routes(
     LoginController_5: controllers.LoginController,
     // @LINE:43
     ShoppingCtrl_3: controllers.ShoppingCtrl,
-    // @LINE:52
-    CountController_0: controllers.CountController,
     // @LINE:54
+    CountController_0: controllers.CountController,
+    // @LINE:56
     AsyncController_2: controllers.AsyncController,
-    // @LINE:57
+    // @LINE:59
     Assets_4: controllers.Assets
   ) = this(errorHandler, HomeController_1, LoginController_5, ShoppingCtrl_3, CountController_0, AsyncController_2, Assets_4, "/")
 
@@ -84,6 +84,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """emptyBasket""", """controllers.ShoppingCtrl.emptyBasket()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """placeOrder""", """controllers.ShoppingCtrl.placeOrder()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """viewOrder/""" + "$" + """id<[^/]+>""", """controllers.ShoppingCtrl.viewOrder(id:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """viewOrders""", """controllers.ShoppingCtrl.viewOrders()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cancelOrder/""" + "$" + """id<[^/]+>""", """controllers.ShoppingCtrl.cancelOrder(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """count""", """controllers.CountController.count"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """message""", """controllers.AsyncController.message"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
@@ -616,11 +618,47 @@ class Routes(
     )
   )
 
-  // @LINE:52
-  private[this] lazy val controllers_CountController_count29_route = Route("GET",
+  // @LINE:50
+  private[this] lazy val controllers_ShoppingCtrl_viewOrders29_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("viewOrders")))
+  )
+  private[this] lazy val controllers_ShoppingCtrl_viewOrders29_invoker = createInvoker(
+    ShoppingCtrl_3.viewOrders(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ShoppingCtrl",
+      "viewOrders",
+      Nil,
+      "GET",
+      this.prefix + """viewOrders""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:51
+  private[this] lazy val controllers_ShoppingCtrl_cancelOrder30_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cancelOrder/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_ShoppingCtrl_cancelOrder30_invoker = createInvoker(
+    ShoppingCtrl_3.cancelOrder(fakeValue[Long]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ShoppingCtrl",
+      "cancelOrder",
+      Seq(classOf[Long]),
+      "GET",
+      this.prefix + """cancelOrder/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:54
+  private[this] lazy val controllers_CountController_count31_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("count")))
   )
-  private[this] lazy val controllers_CountController_count29_invoker = createInvoker(
+  private[this] lazy val controllers_CountController_count31_invoker = createInvoker(
     CountController_0.count,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -634,11 +672,11 @@ class Routes(
     )
   )
 
-  // @LINE:54
-  private[this] lazy val controllers_AsyncController_message30_route = Route("GET",
+  // @LINE:56
+  private[this] lazy val controllers_AsyncController_message32_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("message")))
   )
-  private[this] lazy val controllers_AsyncController_message30_invoker = createInvoker(
+  private[this] lazy val controllers_AsyncController_message32_invoker = createInvoker(
     AsyncController_2.message,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -652,11 +690,11 @@ class Routes(
     )
   )
 
-  // @LINE:57
-  private[this] lazy val controllers_Assets_versioned31_route = Route("GET",
+  // @LINE:59
+  private[this] lazy val controllers_Assets_versioned33_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned31_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned33_invoker = createInvoker(
     Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -847,22 +885,34 @@ class Routes(
         controllers_ShoppingCtrl_viewOrder28_invoker.call(ShoppingCtrl_3.viewOrder(id))
       }
   
-    // @LINE:52
-    case controllers_CountController_count29_route(params@_) =>
+    // @LINE:50
+    case controllers_ShoppingCtrl_viewOrders29_route(params@_) =>
       call { 
-        controllers_CountController_count29_invoker.call(CountController_0.count)
+        controllers_ShoppingCtrl_viewOrders29_invoker.call(ShoppingCtrl_3.viewOrders())
+      }
+  
+    // @LINE:51
+    case controllers_ShoppingCtrl_cancelOrder30_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_ShoppingCtrl_cancelOrder30_invoker.call(ShoppingCtrl_3.cancelOrder(id))
       }
   
     // @LINE:54
-    case controllers_AsyncController_message30_route(params@_) =>
+    case controllers_CountController_count31_route(params@_) =>
       call { 
-        controllers_AsyncController_message30_invoker.call(AsyncController_2.message)
+        controllers_CountController_count31_invoker.call(CountController_0.count)
       }
   
-    // @LINE:57
-    case controllers_Assets_versioned31_route(params@_) =>
+    // @LINE:56
+    case controllers_AsyncController_message32_route(params@_) =>
+      call { 
+        controllers_AsyncController_message32_invoker.call(AsyncController_2.message)
+      }
+  
+    // @LINE:59
+    case controllers_Assets_versioned33_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned31_invoker.call(Assets_4.versioned(path, file))
+        controllers_Assets_versioned33_invoker.call(Assets_4.versioned(path, file))
       }
   }
 }
