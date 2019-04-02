@@ -49,7 +49,7 @@ Seq[Any](_display_(/*2.2*/main("About",user)/*2.20*/{_display_(Seq[Any](format.r
 
               /*
                   -- GENERATED --
-                  DATE: Wed Mar 20 15:38:28 GMT 2019
+                  DATE: Tue Apr 02 09:07:03 IST 2019
                   SOURCE: /home/wdd/year2Project/projectCarRental/app/views/about.scala.html
                   HASH: fbc5425613f0e980b9f1115b0102de221ee1a9a5
                   MATRIX: 959->1|1078->28|1104->46|1142->47|1169->48|1365->215

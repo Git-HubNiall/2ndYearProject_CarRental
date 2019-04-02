@@ -56,14 +56,22 @@
         <div class="row">
             <div class="col-md-6">
                 <p class="text-right">
-                    <a href="@routes.ShoppingCtrl.emptyBasket()" class="btn btn-danger btn-sm" onclick="return confirmDel();">
+                    <a href="@routes.ShoppingCtrl.emptyBasket()"  style="margin-top: 10px; padding-bottom: 7px;" class="btn btn-danger btn-sm" onclick="return confirmDel();">
                     <span class="glyphicon glyphicon-trash"></span> Empty Basket</a>
                 </p>
             </div>  
             <div class="col-md-6">
                 <p class="text-right">
-                    <a href="@routes.ShoppingCtrl.placeOrder()" class="btn btn-success btn-sm">
-                    <span class="glyphicon glyphicon-euro"></span> Place Order</a>
+                    <form action="/placeOrder" method="GET">
+                        <script
+                                src="https://checkout.stripe.com/checkout.js"
+                                class="stripe-button"
+                                data-key="pk_test_7Aly3OieE9f6zWZoVUtNPIis00F1LwlZO0"
+                                data-name="Online Car Rental"
+                                data-description="Payment"
+                                data-amount="shopping\Basket\getBasketTotal()">
+                            </script>
+                    </form>
                 </p>
             </div>  
         </div>
