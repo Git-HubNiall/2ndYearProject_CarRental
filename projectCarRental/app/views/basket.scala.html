@@ -18,7 +18,12 @@
 			  </div>
 		} 
 
-		<table class="table table-bordered table-hover table-condensed">
+        <h3>PLEASE NOTE!</h3>
+        <h3>DUE TO STOCK LIMITATIONS, THE MAXIMUM A CAR CAN BE RENTED IS FOR 14 DAYS!</h3>
+		<h4 style = "text-align: center;">Discounts are as follows : </h4>
+        <h4 style = "text-align: center;">After the first 5 days, each day will have a discount of 20%.</h4>
+        <h4 style = "text-align: center;">After 10 days, each day will have a discount of 30%.</h4>
+        <table class="table table-bordered table-hover table-condensed">
 			<thead>
 			<!-- The header row-->
 			<tr>
@@ -36,7 +41,7 @@
                     <!-- Start of For loop - For each p in products add a row -->
                     @for(i <- customer.getBasket().getBasketItems()) {
                     <tr>
-                        <td>@i.getItem.getName</td>
+                        <td>@i.getItem.getName</td> 
                         <td>@i.getItem.getDescription()</td>
                         <td>&euro; @("%.2f".format(i.getPrice))</td>
                         <td>&euro; @("%.2f".format(i.getItemTotal))</td>

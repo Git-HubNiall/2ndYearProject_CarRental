@@ -43,7 +43,14 @@ public class OrderItem extends Model {
     
     // Increment quantity
     public void increaseQty() {
-        quantity += 1;
+        if(quantity < 14)
+        {
+            quantity += 1;
+        }
+        else{
+            quantity = 14;
+        }
+        
     }
     
     // Decrement quantity
@@ -53,7 +60,22 @@ public class OrderItem extends Model {
     
     // Calculate and return total price for this order item
     public double getItemTotal() {
-        return this.price * this.quantity;
+        double total = 0;
+
+        if(this.quantity <= 5)
+        {
+            total = this.price * this.quantity;
+        }
+        else if(this.quantity <= 10)
+        {
+            total = (this.price * .80) * this.quantity+ this.price;
+        }
+        else{
+            total = (this.price * .70) * this.quantity+ this.price;
+        }
+
+
+        return total;
     }
 	
 	//Generic query helper
