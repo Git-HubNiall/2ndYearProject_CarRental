@@ -53,7 +53,7 @@ public Result logout() {
     session().clear();
     flash("success", "You have been logged out");
     return redirect(routes.LoginController.login());
-}
+} 
 
 public Result registerUser() {
     Form<UserPassword2> regForm = formFactory.form(UserPassword2.class);
@@ -62,23 +62,28 @@ public Result registerUser() {
 
 public Result registerUserSubmit() {
 
-    Form<User> newUserForm = formFactory.form(User.class).bindFromRequest();
-    Form<UserPassword2> newUserForm2 = formFactory.form(UserPassword2.class).bindFromRequest();
+    Form<Customer> newUserForm = formFactory.form(Customer.class).bindFromRequest();
+    //Form<UserPassword2> newUserForm2 = formFactory.form(UserPassword2.class).bindFromRequest();
 
     if (newUserForm.hasErrors()) {
 
-        return badRequest(registerUser.render(newUserForm2,User.getUserById(session().get("email"))));
+        return badRequest(addCustomer.render(newUserForm,User.getUserById(session().get("email"))));
     } else {
 
-        User  newUser = newUserForm.get();
-        UserPassword2 newUser2 = newUserForm2.get();
+        Customer  newUser = newUserForm.get();
+        //UserPassword2 newUser2 = newUserForm2.get();
+        System.out.println("Name: "+newUserForm.field("name").getValue().get());
+        System.out.println("Email: "+newUserForm.field("email").getValue().get());
+        System.out.println("Password: "+newUserForm.field("password").getValue().get());
+        System.out.println("Role: "+newUserForm.field("role").getValue().get());
 
 
-        if(!newUser2.getPassword2().equals(newUser2.getPassword())){
-            flash("error", "Passwords must match "); 
-            return redirect(controllers.routes.LoginController.registerUser());
+
+        // if(!newUser2.getPassword2().equals(newUser2.getPassword())){
+        //     flash("error", "Passwords must match "); 
+        //     return redirect(controllers.routes.LoginController.registerUser());
             
-        } 
+        // } 
     
         if(User.getUserById(newUser.getEmail())==null){
             newUser.save();

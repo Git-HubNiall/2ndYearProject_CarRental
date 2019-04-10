@@ -194,8 +194,10 @@ public class ShoppingCtrl extends Controller {
            // order.removeAllItems(orderId);
            order.adjustStock();
            order.delete();
+
            
-            flash("success", "Your order has been cancelled");
+           
+            flash("success", "Your order has been cancelled. Your money will be refunded within 3-5 working days.");
         }else {
             flash("success", "Sorry, it is too late to cancel this order");
         }

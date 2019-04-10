@@ -33,6 +33,7 @@
                                 <th>Number of Days</th>
                                 <th>Price</th>
                                 <th>Total</th>
+                                <th>Payment Status</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -44,10 +45,11 @@
                         <td>@i.getQuantity()</td>
                         <td>&euro; @("%.2f".format(i.getPrice()))</td>
                         <td>&euro; @("%.2f".format(i.getItemTotal))</td>
+                        <td>@("Order Payed.")</td>
                         
                     </tr>
                     }<!-- End of For loop -->
-                    
+                     
 			</tbody>
         </table>
         <div class="row">

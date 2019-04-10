@@ -1,2 +1,20 @@
-[0m[[0m[0minfo[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/models/products/Category.java: /home/wdd/year2Project/projectCarRental/app/models/products/Category.java uses unchecked or unsafe operations.[0m
-[0m[[0m[0minfo[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/models/products/Category.java: Recompile with -Xlint:unchecked for details.[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/ShoppingCtrl.java:198:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable Stripe[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ShoppingCtrl[0m
+[0m[[0m[31merror[0m] [0m[0m           Stripe.apiKey = "sk_test_4eC39HqLyjWDarjtT1zdp7dc";[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/ShoppingCtrl.java:200:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class Map[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ShoppingCtrl[0m
+[0m[[0m[31merror[0m] [0m[0m           Map<String, Object> params = new HashMap<>();[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/ShoppingCtrl.java:200:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class HashMap[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ShoppingCtrl[0m
+[0m[[0m[31merror[0m] [0m[0m           Map<String, Object> params = new HashMap<>();[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/ShoppingCtrl.java:202:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class Refund[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ShoppingCtrl[0m
+[0m[[0m[31merror[0m] [0m[0m           Refund refund = Refund.create(params);[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/ShoppingCtrl.java:202:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable Refund[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ShoppingCtrl[0m
+[0m[[0m[31merror[0m] [0m[0m           Refund refund = Refund.create(params);[0m
