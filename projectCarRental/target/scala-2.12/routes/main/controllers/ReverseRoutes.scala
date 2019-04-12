@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/year2Project/projectCarRental/conf/routes
-// @DATE:Tue Apr 02 09:07:00 IST 2019
+// @DATE:Fri Apr 12 11:40:24 IST 2019
 
 import play.api.mvc.Call
 
@@ -84,12 +84,6 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "addAdmin")
     }
   
-    // @LINE:8
-    def onsale(cat:Long = 0L): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "onsale" + play.core.routing.queryString(List(if(cat == 0L) None else Some(implicitly[play.api.mvc.QueryStringBindable[Long]].unbind("cat", cat)))))
-    }
-  
     // @LINE:9
     def about(): Call = {
       
@@ -118,6 +112,12 @@ package controllers {
     def deleteAdmin(id:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "deleteAdmin/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
+    }
+  
+    // @LINE:8
+    def onsale(cat:Long = 0L, filter:String = ""): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "onsale" + play.core.routing.queryString(List(if(cat == 0L) None else Some(implicitly[play.api.mvc.QueryStringBindable[Long]].unbind("cat", cat)), if(filter == "") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("filter", filter)))))
     }
   
     // @LINE:35

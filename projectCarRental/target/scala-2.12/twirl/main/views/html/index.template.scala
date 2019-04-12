@@ -33,7 +33,7 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 Seq[Any](format.raw/*1.27*/("""
 """),_display_(/*2.2*/main("Home",user)/*2.19*/{_display_(Seq[Any](format.raw/*2.20*/("""
 """),format.raw/*3.1*/("""<h1>Welcome to Online Car Rental! </h1>
-<h3>The place where you can rent Cars for as long as you want</h3>
+<h3>The place where you can rent Cars for as long as you want. *As Long as it's for 14 days or less*</h3>
 
 <div class="container-fluid">
     <div class="row">
@@ -76,10 +76,10 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Apr 02 09:07:03 IST 2019
+                  DATE: Fri Apr 12 10:49:04 IST 2019
                   SOURCE: /home/wdd/year2Project/projectCarRental/app/views/index.scala.html
-                  HASH: 661279daa8457d95a570261f515befd681b93869
-                  MATRIX: 959->1|1079->26|1107->29|1132->46|1170->47|1198->49|2077->901|2092->907|2153->947|2243->1007
+                  HASH: 94d532d88419aad49062cbb89eaf8a09206b6e42
+                  MATRIX: 959->1|1079->26|1107->29|1132->46|1170->47|1198->49|2116->940|2131->946|2192->986|2282->1046
                   LINES: 28->1|33->1|34->2|34->2|34->2|35->3|59->27|59->27|59->27|63->31
                   -- GENERATED --
               */

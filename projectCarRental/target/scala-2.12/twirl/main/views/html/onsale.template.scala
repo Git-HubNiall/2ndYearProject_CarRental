@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object onsale extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template4[List[models.products.ItemOnSale],List[models.products.Category],models.users.User,play.api.Environment,play.twirl.api.HtmlFormat.Appendable] {
+object onsale extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template6[List[models.products.ItemOnSale],List[models.products.Category],Long,String,models.users.User,play.api.Environment,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(items: List[models.products.ItemOnSale],categories: List[models.products.Category],
+  def apply/*1.2*/(items: List[models.products.ItemOnSale],categories: List[models.products.Category], catId: Long, filter: String,
 user: models.users.User,env: play.api.Environment):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
@@ -42,21 +42,40 @@ Seq[Any](format.raw/*3.1*/("""
 			"""),_display_(/*11.5*/flash/*11.10*/.get("success")),format.raw/*11.25*/("""
 		"""),format.raw/*12.3*/("""</div>
 """)))}),format.raw/*13.2*/("""
-    """),format.raw/*14.5*/("""<div class="col-sm-3">
+
+
+
+    
+
+
+    """),format.raw/*20.5*/("""<div class="col-sm-3">
 		<h4>Categories</h4>
 	        <ul class="list-group">
-                    <a href = """"),_display_(/*17.33*/routes/*17.39*/.HomeController.onsale(0)),format.raw/*17.64*/("""" class="list-group-item">All Categories</a>
-		        """),_display_(/*18.12*/for(c<-categories) yield /*18.30*/ {_display_(Seq[Any](format.raw/*18.32*/("""
-			        """),format.raw/*19.12*/("""<a href = """"),_display_(/*19.24*/routes/*19.30*/.HomeController.onsale(c.getId())),format.raw/*19.63*/("""" class="list-group-item catheight">"""),_display_(/*19.100*/c/*19.101*/.getName),format.raw/*19.109*/("""
-                        """),format.raw/*20.25*/("""<span class="badge">"""),_display_(/*20.46*/c/*20.47*/.getItems.size),format.raw/*20.61*/("""</span> 
+                    <a href = """"),_display_(/*23.33*/routes/*23.39*/.HomeController.onsale(0, filter)),format.raw/*23.72*/("""" class="list-group-item">All Categories</a>
+		        """),_display_(/*24.12*/for(c<-categories) yield /*24.30*/ {_display_(Seq[Any](format.raw/*24.32*/("""
+			        """),format.raw/*25.12*/("""<a href = """"),_display_(/*25.24*/routes/*25.30*/.HomeController.onsale(c.getId(), filter)),format.raw/*25.71*/("""" class="list-group-item catheight">"""),_display_(/*25.108*/c/*25.109*/.getName),format.raw/*25.117*/("""
+                        """),format.raw/*26.25*/("""<span class="badge">"""),_display_(/*26.46*/c/*26.47*/.getItems.size),format.raw/*26.61*/("""</span> 
                     </a>
-			    """)))}),format.raw/*22.9*/("""
-            """),format.raw/*23.13*/("""</ul>
+			    """)))}),format.raw/*28.9*/("""
+            """),format.raw/*29.13*/("""</ul>
     </div>
 
     <div class="col-sm-9">
         <h3>PLEASE NOTE!</h3>
         <h3>Prices are the price per day</h3>
+
+        <div id="actions">
+            <form action=""""),_display_(/*37.28*/routes/*37.34*/.HomeController.onsale(catId)),format.raw/*37.63*/("""" method="GET">
+                <div class="form-group">
+                    <input type="search" id="searchbox" name="filter" value =""""),_display_(/*39.80*/filter),format.raw/*39.86*/("""" placeholder="Search For Cars">
+    
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Search" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+        
         <table class="table table-bordered table-hover table-condensed">
             <thead>
         <!-- The header row-->
@@ -72,66 +91,66 @@ Seq[Any](format.raw/*3.1*/("""
         <tbody>
         <!-- Product row(s) -->
        
-            """),format.raw/*44.68*/("""
-            """),_display_(/*45.14*/for(i<-items) yield /*45.27*/ {_display_(Seq[Any](format.raw/*45.29*/("""
-               """),format.raw/*46.16*/("""<tr>
-                    """),_display_(/*47.22*/if(env.resource("public/images/productImages/" + i.getId + "thumb.jpg").isDefined)/*47.104*/ {_display_(Seq[Any](format.raw/*47.106*/("""
-                        """),format.raw/*48.25*/("""<td><img src="/assets/images/productImages/"""),_display_(/*48.69*/(i.getId + "thumb.jpg")),format.raw/*48.92*/(""""/></td>
-                    """)))}/*49.23*/else/*49.28*/{_display_(Seq[Any](format.raw/*49.29*/("""
-                        """),format.raw/*50.25*/("""<td><img src="/assets/images/productImages/noImage.jpg"/></td>
-                    """)))}),format.raw/*51.22*/("""
-                  """),format.raw/*52.19*/("""<td>"""),_display_(/*52.24*/i/*52.25*/.getId),format.raw/*52.31*/("""</td>
-                  <td>"""),_display_(/*53.24*/i/*53.25*/.getName),format.raw/*53.33*/("""</td>
-                  <td>"""),_display_(/*54.24*/i/*54.25*/.getDescription),format.raw/*54.40*/("""</td>
-                  <td>"""),_display_(/*55.24*/i/*55.25*/.getStock),format.raw/*55.34*/("""</td>
-                  <td>&euro; """),_display_(/*56.31*/("%.2f".format(i.getPrice))),format.raw/*56.58*/("""</td>
+            """),format.raw/*63.68*/("""
+            """),_display_(/*64.14*/for(i<-items) yield /*64.27*/ {_display_(Seq[Any](format.raw/*64.29*/("""
+               """),format.raw/*65.16*/("""<tr>
+                    """),_display_(/*66.22*/if(env.resource("public/images/productImages/" + i.getId + "thumb.jpg").isDefined)/*66.104*/ {_display_(Seq[Any](format.raw/*66.106*/("""
+                        """),format.raw/*67.25*/("""<td><img src="/assets/images/productImages/"""),_display_(/*67.69*/(i.getId + "thumb.jpg")),format.raw/*67.92*/(""""/></td>
+                    """)))}/*68.23*/else/*68.28*/{_display_(Seq[Any](format.raw/*68.29*/("""
+                        """),format.raw/*69.25*/("""<td><img src="/assets/images/productImages/noImage.jpg"/></td>
+                    """)))}),format.raw/*70.22*/("""
+                  """),format.raw/*71.19*/("""<td>"""),_display_(/*71.24*/i/*71.25*/.getId),format.raw/*71.31*/("""</td>
+                  <td>"""),_display_(/*72.24*/i/*72.25*/.getName),format.raw/*72.33*/("""</td>
+                  <td>"""),_display_(/*73.24*/i/*73.25*/.getDescription),format.raw/*73.40*/("""</td>
+                  <td>"""),_display_(/*74.24*/i/*74.25*/.getStock),format.raw/*74.34*/("""</td>
+                  <td>&euro; """),_display_(/*75.31*/("%.2f".format(i.getPrice))),format.raw/*75.58*/("""</td>
 
-                  """),_display_(/*58.20*/if((user != null) && ("admin".equals(user.getRole())))/*58.74*/ {_display_(Seq[Any](format.raw/*58.76*/("""
-                  """),format.raw/*59.19*/("""<!-- Update button -->
+                  """),_display_(/*77.20*/if((user != null) && ("admin".equals(user.getRole())))/*77.74*/ {_display_(Seq[Any](format.raw/*77.76*/("""
+                  """),format.raw/*78.19*/("""<!-- Update button -->
 						<td>
-							<a href=""""),_display_(/*61.18*/routes/*61.24*/.HomeController.updateItem(i.getId)),format.raw/*61.59*/("""" class="button-xs btn-danger">
+							<a href=""""),_display_(/*80.18*/routes/*80.24*/.HomeController.updateItem(i.getId)),format.raw/*80.59*/("""" class="button-xs btn-danger">
 								<span class="glyphicon glyphicon-pencil"></span>
 							</a>
                         </td>
                   <!-- Delete button -->
 						<td>
-							<a href=""""),_display_(/*67.18*/routes/*67.24*/.HomeController.deleteItem(i.getId)),format.raw/*67.59*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
+							<a href=""""),_display_(/*86.18*/routes/*86.24*/.HomeController.deleteItem(i.getId)),format.raw/*86.59*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
 								<span class="glyphicon glyphicon-trash"></span>
 							</a>
                         </td>
-                    """)))}),format.raw/*71.22*/("""
-                    """),_display_(/*72.22*/if((user != null) && ("customer".equals(user.getRole())))/*72.79*/ {_display_(Seq[Any](format.raw/*72.81*/("""
-                        """),_display_(/*73.26*/if(i.getStock() > 0)/*73.46*/{_display_(Seq[Any](format.raw/*73.47*/("""
-                        """),format.raw/*74.25*/("""<td><a href=""""),_display_(/*74.39*/routes/*74.45*/.ShoppingCtrl.addToBasket(i.getId)),format.raw/*74.79*/("""" 
+                    """)))}),format.raw/*90.22*/("""
+                    """),_display_(/*91.22*/if((user != null) && ("customer".equals(user.getRole())))/*91.79*/ {_display_(Seq[Any](format.raw/*91.81*/("""
+                        """),_display_(/*92.26*/if(i.getStock() > 0)/*92.46*/{_display_(Seq[Any](format.raw/*92.47*/("""
+                        """),format.raw/*93.25*/("""<td><a href=""""),_display_(/*93.39*/routes/*93.45*/.ShoppingCtrl.addToBasket(i.getId)),format.raw/*93.79*/("""" 
                              class="btn btn-default btn-xs"><span 
                             class="glyphicon glyphicon-shopping-cart"></span></a>
                         </td>
-                    """)))}/*78.22*/else/*78.26*/{_display_(Seq[Any](format.raw/*78.27*/("""
-                         """),format.raw/*79.26*/("""<td><img src="/assets/images/oos.jpg"/></td>
+                    """)))}/*97.22*/else/*97.26*/{_display_(Seq[Any](format.raw/*97.27*/("""
+                         """),format.raw/*98.26*/("""<td><img src="/assets/images/oos.jpg"/></td>
 
-                    """)))}),format.raw/*81.22*/("""
-                """)))}),format.raw/*82.18*/("""
-               """),format.raw/*83.16*/("""</tr>
-            """)))}),format.raw/*84.14*/("""
+                    """)))}),format.raw/*100.22*/("""
+                """)))}),format.raw/*101.18*/("""
+               """),format.raw/*102.16*/("""</tr>
+            """)))}),format.raw/*103.14*/("""
         
-        """),format.raw/*86.9*/("""</tbody>
+        """),format.raw/*105.9*/("""</tbody>
     </table>
-    """),_display_(/*88.6*/if((user != null) && ("admin".equals(user.getRole())))/*88.60*/ {_display_(Seq[Any](format.raw/*88.62*/("""
-    """),format.raw/*89.5*/("""<p>
-        <a href=""""),_display_(/*90.19*/routes/*90.25*/.HomeController.addItem()),format.raw/*90.50*/("""">
+    """),_display_(/*107.6*/if((user != null) && ("admin".equals(user.getRole())))/*107.60*/ {_display_(Seq[Any](format.raw/*107.62*/("""
+    """),format.raw/*108.5*/("""<p>
+        <a href=""""),_display_(/*109.19*/routes/*109.25*/.HomeController.addItem()),format.raw/*109.50*/("""">
             <button class="btn btn-primary">Add an item</button>
         </a>
     </p>
-    """)))}),format.raw/*94.6*/("""
-"""),format.raw/*95.1*/("""</div>
+    """)))}),format.raw/*113.6*/("""
+"""),format.raw/*114.1*/("""</div>
  """)))}))
       }
     }
   }
 
-  def render(items:List[models.products.ItemOnSale],categories:List[models.products.Category],user:models.users.User,env:play.api.Environment): play.twirl.api.HtmlFormat.Appendable = apply(items,categories,user,env)
+  def render(items:List[models.products.ItemOnSale],categories:List[models.products.Category],catId:Long,filter:String,user:models.users.User,env:play.api.Environment): play.twirl.api.HtmlFormat.Appendable = apply(items,categories,catId,filter,user,env)
 
-  def f:((List[models.products.ItemOnSale],List[models.products.Category],models.users.User,play.api.Environment) => play.twirl.api.HtmlFormat.Appendable) = (items,categories,user,env) => apply(items,categories,user,env)
+  def f:((List[models.products.ItemOnSale],List[models.products.Category],Long,String,models.users.User,play.api.Environment) => play.twirl.api.HtmlFormat.Appendable) = (items,categories,catId,filter,user,env) => apply(items,categories,catId,filter,user,env)
 
   def ref: this.type = this
 
@@ -140,11 +159,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Apr 02 09:07:04 IST 2019
+                  DATE: Fri Apr 12 12:59:37 IST 2019
                   SOURCE: /home/wdd/year2Project/projectCarRental/app/views/onsale.scala.html
-                  HASH: 2b340795f58e3b15654897f6677acdb5cca328d6
-                  MATRIX: 1045->1|1274->137|1301->139|1329->159|1367->160|1398->165|1454->263|1482->266|1522->298|1561->300|1591->303|1655->341|1669->346|1705->361|1735->364|1773->372|1805->377|1942->487|1957->493|2003->518|2086->574|2120->592|2160->594|2200->606|2239->618|2254->624|2308->657|2373->694|2384->695|2414->703|2467->728|2515->749|2525->750|2560->764|2632->806|2673->819|3222->1395|3263->1409|3292->1422|3332->1424|3376->1440|3429->1466|3521->1548|3562->1550|3615->1575|3686->1619|3730->1642|3779->1673|3792->1678|3831->1679|3884->1704|3999->1788|4046->1807|4078->1812|4088->1813|4115->1819|4171->1848|4181->1849|4210->1857|4266->1886|4276->1887|4312->1902|4368->1931|4378->1932|4408->1941|4471->1977|4519->2004|4572->2030|4635->2084|4675->2086|4722->2105|4800->2156|4815->2162|4871->2197|5098->2397|5113->2403|5169->2438|5382->2620|5431->2642|5497->2699|5537->2701|5590->2727|5619->2747|5658->2748|5711->2773|5752->2787|5767->2793|5822->2827|6044->3030|6057->3034|6096->3035|6150->3061|6248->3128|6297->3146|6341->3162|6391->3181|6436->3199|6489->3226|6552->3280|6592->3282|6624->3287|6673->3309|6688->3315|6734->3340|6859->3435|6887->3436
-                  LINES: 28->1|34->3|35->4|35->4|35->4|36->5|39->8|40->9|40->9|40->9|41->10|42->11|42->11|42->11|43->12|44->13|45->14|48->17|48->17|48->17|49->18|49->18|49->18|50->19|50->19|50->19|50->19|50->19|50->19|50->19|51->20|51->20|51->20|51->20|53->22|54->23|75->44|76->45|76->45|76->45|77->46|78->47|78->47|78->47|79->48|79->48|79->48|80->49|80->49|80->49|81->50|82->51|83->52|83->52|83->52|83->52|84->53|84->53|84->53|85->54|85->54|85->54|86->55|86->55|86->55|87->56|87->56|89->58|89->58|89->58|90->59|92->61|92->61|92->61|98->67|98->67|98->67|102->71|103->72|103->72|103->72|104->73|104->73|104->73|105->74|105->74|105->74|105->74|109->78|109->78|109->78|110->79|112->81|113->82|114->83|115->84|117->86|119->88|119->88|119->88|120->89|121->90|121->90|121->90|125->94|126->95
+                  HASH: 8b682b270f82f1ce3fdbe46e2432ce479d189fb8
+                  MATRIX: 1057->1|1315->166|1342->168|1370->188|1408->189|1439->194|1495->292|1523->295|1563->327|1602->329|1632->332|1696->370|1710->375|1746->390|1776->393|1814->401|1856->416|1993->526|2008->532|2062->565|2145->621|2179->639|2219->641|2259->653|2298->665|2313->671|2375->712|2440->749|2451->750|2481->758|2534->783|2582->804|2592->805|2627->819|2699->861|2740->874|2943->1050|2958->1056|3008->1085|3171->1221|3198->1227|3876->1932|3917->1946|3946->1959|3986->1961|4030->1977|4083->2003|4175->2085|4216->2087|4269->2112|4340->2156|4384->2179|4433->2210|4446->2215|4485->2216|4538->2241|4653->2325|4700->2344|4732->2349|4742->2350|4769->2356|4825->2385|4835->2386|4864->2394|4920->2423|4930->2424|4966->2439|5022->2468|5032->2469|5062->2478|5125->2514|5173->2541|5226->2567|5289->2621|5329->2623|5376->2642|5454->2693|5469->2699|5525->2734|5752->2934|5767->2940|5823->2975|6036->3157|6085->3179|6151->3236|6191->3238|6244->3264|6273->3284|6312->3285|6365->3310|6406->3324|6421->3330|6476->3364|6698->3567|6711->3571|6750->3572|6804->3598|6903->3665|6953->3683|6998->3699|7049->3718|7095->3736|7149->3763|7213->3817|7254->3819|7287->3824|7337->3846|7353->3852|7400->3877|7526->3972|7555->3973
+                  LINES: 28->1|34->3|35->4|35->4|35->4|36->5|39->8|40->9|40->9|40->9|41->10|42->11|42->11|42->11|43->12|44->13|51->20|54->23|54->23|54->23|55->24|55->24|55->24|56->25|56->25|56->25|56->25|56->25|56->25|56->25|57->26|57->26|57->26|57->26|59->28|60->29|68->37|68->37|68->37|70->39|70->39|94->63|95->64|95->64|95->64|96->65|97->66|97->66|97->66|98->67|98->67|98->67|99->68|99->68|99->68|100->69|101->70|102->71|102->71|102->71|102->71|103->72|103->72|103->72|104->73|104->73|104->73|105->74|105->74|105->74|106->75|106->75|108->77|108->77|108->77|109->78|111->80|111->80|111->80|117->86|117->86|117->86|121->90|122->91|122->91|122->91|123->92|123->92|123->92|124->93|124->93|124->93|124->93|128->97|128->97|128->97|129->98|131->100|132->101|133->102|134->103|136->105|138->107|138->107|138->107|139->108|140->109|140->109|140->109|144->113|145->114
                   -- GENERATED --
               */
           

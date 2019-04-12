@@ -34,7 +34,8 @@
 		</div>
 		<ul class="nav navbar-nav">
             <li @if(pagename == "Home") {class="active"}><a href="@routes.HomeController.index()">Home</a></li>
-		    <li @if(pagename == "On Sale") {class="active"}><a href="@routes.HomeController.onsale()">Cars To Rent</a></li>
+		    <li @if(pagename == "On Sale") {class="active"}><a href="@routes.HomeController.onsale()">Cars To Rent</a></li>	
+			<li @if(pagename == "Shopping Basket") {class="active"}><a href="@routes.ShoppingCtrl.showBasket()">Basket</a></li>
 			<li @if(pagename == "About") {class="active"}><a href="@routes.HomeController.about()">About us</a></li>	
 			<li @if(pagename == "Register") {class="active"}><a href="@routes.LoginController.registerUser()">Register user</a></li>
 			@if((user != null) && ("admin".equals(user.getRole()))) {

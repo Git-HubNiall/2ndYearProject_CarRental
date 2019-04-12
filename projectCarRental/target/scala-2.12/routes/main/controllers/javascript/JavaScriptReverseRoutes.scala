@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/year2Project/projectCarRental/conf/routes
-// @DATE:Tue Apr 02 09:07:00 IST 2019
+// @DATE:Fri Apr 12 11:40:24 IST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -119,16 +119,6 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:8
-    def onsale: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.onsale",
-      """
-        function(cat0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "onsale" + _qS([(cat0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[Long]].javascriptUnbind + """)("cat", cat0))])})
-        }
-      """
-    )
-  
     // @LINE:9
     def about: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.about",
@@ -175,6 +165,16 @@ package controllers.javascript {
       """
         function(id0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteAdmin/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:8
+    def onsale: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.onsale",
+      """
+        function(cat0,filter1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "onsale" + _qS([(cat0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[Long]].javascriptUnbind + """)("cat", cat0)), (filter1 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("filter", filter1))])})
         }
       """
     )

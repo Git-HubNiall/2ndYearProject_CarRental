@@ -1,20 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/ShoppingCtrl.java:198:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   variable Stripe[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ShoppingCtrl[0m
-[0m[[0m[31merror[0m] [0m[0m           Stripe.apiKey = "sk_test_4eC39HqLyjWDarjtT1zdp7dc";[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/ShoppingCtrl.java:200:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Map[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ShoppingCtrl[0m
-[0m[[0m[31merror[0m] [0m[0m           Map<String, Object> params = new HashMap<>();[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/ShoppingCtrl.java:200:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class HashMap[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ShoppingCtrl[0m
-[0m[[0m[31merror[0m] [0m[0m           Map<String, Object> params = new HashMap<>();[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/ShoppingCtrl.java:202:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Refund[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ShoppingCtrl[0m
-[0m[[0m[31merror[0m] [0m[0m           Refund refund = Refund.create(params);[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/ShoppingCtrl.java:202:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   variable Refund[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ShoppingCtrl[0m
-[0m[[0m[31merror[0m] [0m[0m           Refund refund = Refund.create(params);[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/year2Project/projectCarRental/app/controllers/HomeController.java:210:1: method onsale in class controllers.ReverseHomeController cannot be applied to given types;[0m
+[0m[[0m[31merror[0m] [0m[0m  required: long,java.lang.String[0m
+[0m[[0m[31merror[0m] [0m[0m  found: int[0m
+[0m[[0m[31merror[0m] [0m[0m  reason: actual and formal argument lists differ in length[0m
+[0m[[0m[31merror[0m] [0m[0m    return redirect(controllers.routes.HomeController.onsale(0));[0m

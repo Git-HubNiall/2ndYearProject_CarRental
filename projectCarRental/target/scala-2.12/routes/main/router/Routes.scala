@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/year2Project/projectCarRental/conf/routes
-// @DATE:Tue Apr 02 09:07:00 IST 2019
+// @DATE:Fri Apr 12 11:40:24 IST 2019
 
 package router
 
@@ -56,7 +56,7 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """onsale""", """controllers.HomeController.onsale(cat:Long ?= 0L)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """onsale""", """controllers.HomeController.onsale(cat:Long ?= 0L, filter:String ?= "")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """about""", """controllers.HomeController.about"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addItem""", """controllers.HomeController.addItem"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addItemSubmit""", """controllers.HomeController.addItemSubmit"""),
@@ -119,12 +119,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("onsale")))
   )
   private[this] lazy val controllers_HomeController_onsale1_invoker = createInvoker(
-    HomeController_1.onsale(fakeValue[Long]),
+    HomeController_1.onsale(fakeValue[Long], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
       "onsale",
-      Seq(classOf[Long]),
+      Seq(classOf[Long], classOf[String]),
       "GET",
       this.prefix + """onsale""",
       """""",
@@ -719,8 +719,8 @@ class Routes(
   
     // @LINE:8
     case controllers_HomeController_onsale1_route(params@_) =>
-      call(params.fromQuery[Long]("cat", Some(0L))) { (cat) =>
-        controllers_HomeController_onsale1_invoker.call(HomeController_1.onsale(cat))
+      call(params.fromQuery[Long]("cat", Some(0L)), params.fromQuery[String]("filter", Some(""))) { (cat, filter) =>
+        controllers_HomeController_onsale1_invoker.call(HomeController_1.onsale(cat, filter))
       }
   
     // @LINE:9
