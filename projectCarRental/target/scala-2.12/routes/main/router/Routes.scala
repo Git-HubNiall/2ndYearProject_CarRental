@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/year2Project/projectCarRental/conf/routes
-// @DATE:Fri Apr 12 11:40:24 IST 2019
+// @DATE:Fri Apr 26 14:55:42 IST 2019
 
 package router
 
@@ -20,11 +20,11 @@ class Routes(
   LoginController_5: controllers.LoginController,
   // @LINE:43
   ShoppingCtrl_3: controllers.ShoppingCtrl,
-  // @LINE:54
+  // @LINE:55
   CountController_0: controllers.CountController,
-  // @LINE:56
+  // @LINE:57
   AsyncController_2: controllers.AsyncController,
-  // @LINE:59
+  // @LINE:60
   Assets_4: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -37,11 +37,11 @@ class Routes(
     LoginController_5: controllers.LoginController,
     // @LINE:43
     ShoppingCtrl_3: controllers.ShoppingCtrl,
-    // @LINE:54
+    // @LINE:55
     CountController_0: controllers.CountController,
-    // @LINE:56
+    // @LINE:57
     AsyncController_2: controllers.AsyncController,
-    // @LINE:59
+    // @LINE:60
     Assets_4: controllers.Assets
   ) = this(errorHandler, HomeController_1, LoginController_5, ShoppingCtrl_3, CountController_0, AsyncController_2, Assets_4, "/")
 
@@ -86,6 +86,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """viewOrder/""" + "$" + """id<[^/]+>""", """controllers.ShoppingCtrl.viewOrder(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """viewOrders""", """controllers.ShoppingCtrl.viewOrders()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cancelOrder/""" + "$" + """id<[^/]+>""", """controllers.ShoppingCtrl.cancelOrder(id:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """returnCar/""" + "$" + """id<[^/]+>""", """controllers.ShoppingCtrl.returnCar(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """count""", """controllers.CountController.count"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """message""", """controllers.AsyncController.message"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
@@ -654,11 +655,29 @@ class Routes(
     )
   )
 
-  // @LINE:54
-  private[this] lazy val controllers_CountController_count31_route = Route("GET",
+  // @LINE:52
+  private[this] lazy val controllers_ShoppingCtrl_returnCar31_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("returnCar/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_ShoppingCtrl_returnCar31_invoker = createInvoker(
+    ShoppingCtrl_3.returnCar(fakeValue[Long]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ShoppingCtrl",
+      "returnCar",
+      Seq(classOf[Long]),
+      "GET",
+      this.prefix + """returnCar/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:55
+  private[this] lazy val controllers_CountController_count32_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("count")))
   )
-  private[this] lazy val controllers_CountController_count31_invoker = createInvoker(
+  private[this] lazy val controllers_CountController_count32_invoker = createInvoker(
     CountController_0.count,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -672,11 +691,11 @@ class Routes(
     )
   )
 
-  // @LINE:56
-  private[this] lazy val controllers_AsyncController_message32_route = Route("GET",
+  // @LINE:57
+  private[this] lazy val controllers_AsyncController_message33_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("message")))
   )
-  private[this] lazy val controllers_AsyncController_message32_invoker = createInvoker(
+  private[this] lazy val controllers_AsyncController_message33_invoker = createInvoker(
     AsyncController_2.message,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -690,11 +709,11 @@ class Routes(
     )
   )
 
-  // @LINE:59
-  private[this] lazy val controllers_Assets_versioned33_route = Route("GET",
+  // @LINE:60
+  private[this] lazy val controllers_Assets_versioned34_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned33_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned34_invoker = createInvoker(
     Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -897,22 +916,28 @@ class Routes(
         controllers_ShoppingCtrl_cancelOrder30_invoker.call(ShoppingCtrl_3.cancelOrder(id))
       }
   
-    // @LINE:54
-    case controllers_CountController_count31_route(params@_) =>
-      call { 
-        controllers_CountController_count31_invoker.call(CountController_0.count)
+    // @LINE:52
+    case controllers_ShoppingCtrl_returnCar31_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_ShoppingCtrl_returnCar31_invoker.call(ShoppingCtrl_3.returnCar(id))
       }
   
-    // @LINE:56
-    case controllers_AsyncController_message32_route(params@_) =>
+    // @LINE:55
+    case controllers_CountController_count32_route(params@_) =>
       call { 
-        controllers_AsyncController_message32_invoker.call(AsyncController_2.message)
+        controllers_CountController_count32_invoker.call(CountController_0.count)
       }
   
-    // @LINE:59
-    case controllers_Assets_versioned33_route(params@_) =>
+    // @LINE:57
+    case controllers_AsyncController_message33_route(params@_) =>
+      call { 
+        controllers_AsyncController_message33_invoker.call(AsyncController_2.message)
+      }
+  
+    // @LINE:60
+    case controllers_Assets_versioned34_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned33_invoker.call(Assets_4.versioned(path, file))
+        controllers_Assets_versioned34_invoker.call(Assets_4.versioned(path, file))
       }
   }
 }

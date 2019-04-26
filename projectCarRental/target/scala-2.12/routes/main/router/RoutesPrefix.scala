@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/year2Project/projectCarRental/conf/routes
-// @DATE:Fri Apr 12 11:40:24 IST 2019
+// @DATE:Fri Apr 26 14:55:42 IST 2019
 
 
 package router {

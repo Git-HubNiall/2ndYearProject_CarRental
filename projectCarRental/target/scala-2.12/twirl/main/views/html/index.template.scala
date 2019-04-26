@@ -38,29 +38,18 @@ Seq[Any](format.raw/*1.27*/("""
 <div class="container-fluid">
     <div class="row">
     <div class="col-sm-6">
-        <div class="well sidecol">
-                <input type="text" placeholder="Search..">
-                <form action="/action_page.php">
-                    Pick up date:
-                    <input type="date" name="pickUp">
-                    <input type="submit">
-                </form>
+        
+            <img class="collage" src=""""),_display_(/*10.40*/routes/*10.46*/.Assets.versioned("images/rental-car-ireland.jpg")),format.raw/*10.96*/("""" alt="carWithBackground">
 
-                <form action="/action_page.php">
-                    Drop off date:
-                    <input type="date" name="dropOff">
-                    <input type="submit">
-                </form>	
-        </div>
     </div>
     
     <div class="col-sm-6">
         <div class="well sidecol2">
-                <img class="collage" src=""""),_display_(/*27.44*/routes/*27.50*/.Assets.versioned("images/carlogos.png")),format.raw/*27.90*/("""" alt="carlogos">
+                <img class="collage" src=""""),_display_(/*16.44*/routes/*16.50*/.Assets.versioned("images/carlogos.png")),format.raw/*16.90*/("""" alt="carlogos">
         </div>
     </div>
     </div>
-""")))}),format.raw/*31.2*/("""		  """))
+""")))}),format.raw/*20.2*/("""		  """))
       }
     }
   }
@@ -76,11 +65,11 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 12 10:49:04 IST 2019
+                  DATE: Fri Apr 26 14:55:42 IST 2019
                   SOURCE: /home/wdd/year2Project/projectCarRental/app/views/index.scala.html
-                  HASH: 94d532d88419aad49062cbb89eaf8a09206b6e42
-                  MATRIX: 959->1|1079->26|1107->29|1132->46|1170->47|1198->49|2116->940|2131->946|2192->986|2282->1046
-                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|59->27|59->27|59->27|63->31
+                  HASH: 0c3a807012f0e05ff8064e4d8f076996719f317b
+                  MATRIX: 959->1|1079->26|1107->29|1132->46|1170->47|1198->49|1506->330|1521->336|1592->386|1775->542|1790->548|1851->588|1941->648
+                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|42->10|42->10|42->10|48->16|48->16|48->16|52->20
                   -- GENERATED --
               */
           

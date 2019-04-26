@@ -202,7 +202,25 @@ public class ShoppingCtrl extends Controller {
             flash("success", "Sorry, it is too late to cancel this order");
         }
         return ok(viewOrders.render((Customer)User.getUserById(session().get("email"))));
+    } 
+
+
+    @Transactional
+    public Result returnCar(Long orderId){
+        ShopOrder order = ShopOrder.find.byId(orderId);
+        
+           // order.removeAllItems(orderId);
+           order.adjustStock();
+           order.delete();
+
+           
+           
+            flash("success", "Your rented car has been returned");
+        
+        return ok(viewOrders.render((Customer)User.getUserById(session().get("email"))));
     }
+
+
 
     public boolean compareDates(Calendar c1, Calendar c2){
         boolean allowed = true;
@@ -211,7 +229,7 @@ public class ShoppingCtrl extends Controller {
         // Calculate the difference in millisecond between two dates
         long diffInMilis = miliSecondForDate2 - miliSecondForDate1;
 
-        long diffInMinutes = diffInMilis / (60 * 1000);
+        long diffInMinutes = diffInMilis / (60 * 4000);
         if(diffInMinutes >60){
             allowed=false;
         }

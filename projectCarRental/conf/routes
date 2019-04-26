@@ -49,6 +49,7 @@ GET     /placeOrder                 controllers.ShoppingCtrl.placeOrder()
 GET     /viewOrder/:id              controllers.ShoppingCtrl.viewOrder(id: Long)
 GET     /viewOrders                 controllers.ShoppingCtrl.viewOrders()
 GET     /cancelOrder/:id            controllers.ShoppingCtrl.cancelOrder(id: Long)
+GET     /returnCar/:id              controllers.ShoppingCtrl.returnCar(id: Long)
 
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count

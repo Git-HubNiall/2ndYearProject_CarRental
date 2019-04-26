@@ -62,7 +62,7 @@ public class HomeController extends Controller {
      }
 
     public Result index() {
-        return redirect(routes.HomeController.onsale(0,""));
+        return ok(index.render(User.getUserById(session().get("email"))));
     }
 
     public Result about() {
